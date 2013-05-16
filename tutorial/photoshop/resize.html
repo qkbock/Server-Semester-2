@@ -1,0 +1,95 @@
+<html>
+
+<head>
+	<link href="../css/style.css" rel="stylesheet" />
+	<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Julius+Sans+One|Didact+Gothic' rel='stylesheet' type='text/css'>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var toggle = $('.toggle');
+			$(toggle).hide();
+			
+			$('li#b1').click(function(){
+				$('li#o1').toggle(500);
+			});
+			
+			$('li#b2').click(function(){
+				$('li#o2').toggle(800);
+			});
+			
+			$('li#b3').click(function(){
+				$('li#o3').toggle(500);
+			});
+			
+			$('li#b4').click(function(){
+				$('li#o4').toggle(500);
+			});
+			
+			$('li#b5').click(function(){
+				$('ul#o5').show(500);
+				$('ul#o6').show(500);
+			});
+			
+			$('ul#o5').click(function(){
+				$('li#o5p5').toggle(500);
+			});
+			
+			$('ul#o6').click(function(){
+				$('li#o6p5').toggle(500);
+			});
+			
+		});
+	</script>
+</head>
+
+<body>
+	<article class="content">
+	<center><h1>How to Resize an Image in Photoshop</h1></center>
+	<hr></hr>
+	<ol>
+		<li id="b1">Open the File.
+			<ul><li id ="o1" class ="toggle"><a href="open.html">Click here</a> if you do not know how.</li></ul>
+		</li>
+		
+		<li id="b2">Find "Image Size" in the Menu Bar
+			<ul><li id ="o2" class ="toggle">Under "Image" in the Menu Bar, click "Image Size."</li>
+				<li id ="o2" class="img toggle"><img src="images/imageMenu.png"/ ></li>
+			</ul>
+		</li>
+		
+		<li id="b3">Change the image size.
+			<ul><li id ="o3" class ="toggle">Change the numbers in the Pixel Dimensions (width and height) or Document Size (width, height and resolution).</li>
+				<li id ="o3" class="img toggle"><img src="images/imageResizeWindow.png"/ ></li>
+			</ul>
+		</li>
+		
+		<li id="b4">Hit "OK."
+			<ul><li id ="o4" class ="toggle">Click the blue "OK" button (return).</li>
+				<li id ="o4" class="img toggle"><img src="images/imageResizeWindowOK.png"/ ></li>
+			</ul>
+		</li>
+		<li id="b5">Save the file.
+			<ul id="o5" class="toggle">Same file type
+				<li id="o5p5" class ="toggle">If you want your image to remain the same file type, then go to "File" in the Menu Bar and click "Save" ("Command" + "s").</li>
+				<li id="o5p5" class="img toggle"><img src="images/saveMenu.png"/ ></li>
+			</ul>
+			<ul id="o6" class="toggle">Different file type
+				<li id="o6p5" class ="toggle">If you wish to save your image as a different file type, then go to "File" in the Menu Bar and click "Save As..." ("Command" + [shift] + "S").</li>
+				<li id="o6p5" class="img toggle"><img src="images/saveAsMenu.png"/ ></li>
+				<li id="o6p5" class ="toggle">Select your desired file format from the drop down menu.</li>
+				<li id="o6p5" class="img toggle"><img src="images/formatMenu.png"/ ></li>
+				<li id="o6p5" class ="toggle">Press the "Save" button (return).</li>
+				<li id="o6p5" class="img toggle"><img src="images/saveButton.png"/ ></li>
+			</ul>
+		</li>
+		
+	</ol>
+	</artilce>
+
+</body>
+</html>
+
+
+
+
+

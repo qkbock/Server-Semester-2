@@ -1,0 +1,13 @@
+body{
+	width: 100%;
+}
+
+section#holder{
+	width: 25%;
+	margin: auto;
+	margin-bottom: 150px;	
+}
+
+img#scrollingStoryboard {
+	width: 100%;
+}

@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+		<script type="text/javascript">
+		
+			$(document).ready(function(){
+				$('#ajax').click(function(){
+					$.ajax({
+						type: "POST",
+						url: "file.php",
+						data: { number: "1" },
+						success: function(data) {
+							$('#adult-bev').append("<p>"+data+"</p>");
+						}
+					});
+				});
+			});
+		
+		
+		</script>
+	</head>
+	<body>
+		<button id="ajax">Click</button>
+		
+		<div id="adult-bev"></div>
+	</body>
+</html>
