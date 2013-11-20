@@ -91,7 +91,6 @@ $(document).ready(function() {
 			type: "POST",
 			url: "makeGraphHome.php",
 			data: { userNameVal: username, movieVal: trimed },
-/* 			data: { userName: "Mauricio", startTime: 1367811577, endTime: 1367813001}, */
 			success: function(data) {
 				document.getElementById("graphBoxDataHolder").innerHTML = data;
 			}
@@ -172,8 +171,8 @@ $(document).ready(function() {
 				$.ajax({
 					type: "POST",
 					url: "makeGraph.php",
-					data: { userNameVal: username, startTimeVal: startTime, endTimeVal: endTime },
-/* 					data: { userName: "Mauricio", startTime: 1367811577, endTime: 1367813001}, */
+/* 					data: { userNameVal: username, startTimeVal: startTime, endTimeVal: endTime }, */
+					data: { userName: "Mauricio", startTime: 1367524387, endTime: 1367525959},
 					success: function(data) {
 						document.getElementById("graphHolder").innerHTML = data;
 					}

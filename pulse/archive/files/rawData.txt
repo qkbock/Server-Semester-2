@@ -39,3 +39,25 @@
 {"id":20001,"url":"http://api.cosm.com/v2/triggers/20001","type":"change","threshold_value":null,"timestamp":"2013-04-10T21:02:23.702916Z","environment":{"id":104810,"feed":"http://api.cosm.com/v2/feeds/104810","title":"Cosm Pulse 2","description":null,"private":false},"triggering_datastream":{"id":"Quincy","url":"http://api.cosm.com/v2/feeds/104810/datastreams/Quincy","at":"2013-04-10T21:02:23.659431Z","value":{"max_value":461.0,"min_value":0.0,"value":"210"}}}
 {"id":20001,"url":"http://api.cosm.com/v2/triggers/20001","type":"change","threshold_value":null,"timestamp":"2013-04-10T21:02:24.617815Z","environment":{"id":104810,"feed":"http://api.cosm.com/v2/feeds/104810","title":"Cosm Pulse 2","description":null,"private":false},"triggering_datastream":{"id":"Quincy","url":"http://api.cosm.com/v2/feeds/104810/datastreams/Quincy","at":"2013-04-10T21:02:24.443418Z","value":{"max_value":461.0,"min_value":0.0,"value":"187"}}}
 {"id":20001,"url":"http://api.cosm.com/v2/triggers/20001","type":"change","threshold_value":null,"timestamp":"2013-04-10T21:02:25.937089Z","environment":{"id":104810,"feed":"http://api.cosm.com/v2/feeds/104810","title":"Cosm Pulse 2","description":null,"private":false},"triggering_datastream":{"id":"Quincy","url":"http://api.cosm.com/v2/feeds/104810/datastreams/Quincy","at":"2013-04-10T21:02:25.833592Z","value":{"max_value":461.0,"min_value":0.0,"value":"141"}}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
