@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html>
+        <head>
+                <title>Log a Chore</title>
+                <link type="text/css" rel="stylesheet" href="../CSS/style.css">
+                <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'>
+                <link rel="apple-touch-icon" href="icon.png" />
+                <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1">
+				<meta name=apple-mobile-web-app-capable content=yes>
+				<meta name=apple-mobile-web-app-status-bar-style content=black>
+        </head>
+        
+        <body>
+        
+        <center><nav>
+        	<a href='index.html' style="background: #af5775;" id="LogButton" >Log a Chore</a>
+        	<a href='viewMyChores.php' id="AllButton">View All</a>
+        </nav></center>
+        <article>
+        	<center><br><form method="post" action="logChore.php">
+ 	           <input type="hidden" name="userNameVal" value="Person5"/><br>            
+               <input type="text" name="choreVal" placeholder="Chore" /><br><br>
+               <!--
+<select name ="choreVal">
+               		<option>Select a Chore...</option>
+   		            <option>Dishes</option>
+                    <option>Laundry</option>
+                    <option>Sweeping</option>
+               </select>
+-->
+               <select name="timeVal" />
+               		<option>Select a Time of Day...</option>
+   		            <option>Morning</option>
+                    <option>Afternoon</option>
+                    <option>Evening</option>
+               </select><br><br>
+               <p style="font-size:1.2em;">How long did it take?</p>
+               <p style="margin-bottom:0px;"><span id="range">15</span> minutes</p>
+               <input type="range" style="width:98%;" min="5" max="180" step="5" value="20" onchange="showValue(this.value)" name ="durationVal"><br><br><br><br>
+               <input type="submit" value="Submit"/>    
+           </form></center>
+           </article>
+           <script>
+           
+            function showValue(newValue) {
+            	document.getElementById("range").innerHTML=newValue;
+            }
+        
+           </script>
+           
+        </body>
+</html>

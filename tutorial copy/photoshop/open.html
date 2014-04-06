@@ -1,0 +1,69 @@
+<html>
+
+<head>
+	<link href="../css/style.css" rel="stylesheet" />
+	<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Julius+Sans+One|Didact+Gothic' rel='stylesheet' type='text/css'>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var toggle = $('.toggle');
+			$(toggle).hide();
+			
+			$('li#b1').click(function(){
+				$('li#o1').toggle(500);
+			});
+			
+			$('li#b2').click(function(){
+				$('li#o2').toggle(800);
+			});
+			
+			$('li#b3').click(function(){
+				$('li#o3').toggle(500);
+			});
+			
+			$('li#b4').click(function(){
+				$('li#o4').toggle(500);
+			});
+			
+			$('li#b5').click(function(){
+				$('li#o5').toggle(500);
+			});			
+		});
+	</script>
+
+</head>
+
+<body>	
+	<article class="content">
+	<center><h1>How to Open an Image in Photoshop</h1></center>
+	<hr></hr>
+	<ol>
+		<li id="b1">Launch Photoshop
+			<ul><li id ="o1" class ="toggle">To launch Photoshop navigate to your Applications folder and double click on the Photoshop application icon.</li>
+				<li id ="o1" class="img toggle"><img src="images/photoshopIcons.png"/ ></li></ul>
+		</li>
+		
+		<li id="b2">Find "Open" in the Menu Bar
+			<ul><li id ="o2" class ="toggle">Under "File" in the Menu Bar, click "Open." ("Command" + "o")</li>
+				<li id ="o2" class="img toggle"><img src="images/fileMenu.png"/ ></ul>
+		</li>
+		<li id="b3">Navigate to your image
+			<ul><li id ="o3" class ="toggle">A window will pop up which will allow you to navigate through all the folders and files on your computer.  Go to the folder that contains the file you wish to open and click once on it.</li>
+				<li id ="o3" class="img toggle"><img src="images/openWindow.png"/ ></li></ul>
+		</li>
+		<li id="b4">Open your file
+			<ul><li id ="o4" class ="toggle">With the file selected press the (now blue) "Open" button in the lower right corner of the window.</li>
+				<li id ="o4" class="img toggle"><img src="images/openButton.png"/ ></li></ul>
+		</li>
+		<li id="b5">Your file is now open
+			<ul><li id ="o5" class="toggle">It will appear in the main work space of Photoshop.</li>
+				<li id ="o5" class="img toggle"><img src="images/fileOpen.png"/ ></li></ul>
+		</li>
+	</ol>
+	
+	<p>You may proceed to <a href="resize.html">resize</a> your image.</p>
+	</article>
+
+	
+</body>
+</html>

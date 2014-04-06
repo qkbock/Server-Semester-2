@@ -1,0 +1,102 @@
+/*
+Pink: #F82641; TOO BRIGHT
+Yellow: #FFAA1D;
+Green: #9DC52C;
+Blue: #59BFC5; TOO SATURATED
+DarkBlue: #25335A;
+Black: #131D2E;
+DarkGrey: #767A82;
+LightGrey: #9EA1A7;
+Cream: #F6FBEE;
+
+
+*/
+
+
+div, article, section, nav, p, a, img, h1, h2{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	overflow-x: hidden; 
+	overflow-y: hidden; 
+/* 	background: url(http://54.235.78.70/pulse/images/diagonal.png) repeat;  */
+	zoom: normal;
+	font-family:'light',Sans-Serif;
+	margin: 0px;	
+}
+
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:none;}
+a:active {text-decoration:none;
+	
+}
+
+input:focus{
+	outline: none;
+}
+
+/*
+section{
+	overflow-y: auto;
+}
+*/
+
+nav.topNav{
+	width:100%;
+	background-color: #59BFC5;
+/* 	height:100px; */
+	position: absolute;
+	top:0px;
+}
+
+nav.bottomNav{
+	width:100%;
+	position: fixed;
+	bottom:0px;
+}
+
+section.iconHolder{
+	width:100%;
+	background-color: #59BFC5;
+	position: absolute;
+	bottom:0px;
+}
+
+h1{
+	font-family:'medium',Sans-Serif;
+	color: white;
+	text-align: center;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+img.navIcons{
+	width: 38px;
+	margin: 5px;
+}
+
+nav.bottomNav section.iconHolder img#home{
+	margin-left: 12px;
+}
+nav.bottomNav section.iconHolder img#stats{
+	margin-left: 10px;
+}
+nav.bottomNav section.iconHolder img#settings{
+	margin-left: 95px;
+}
+nav.bottomNav section.iconHolder img#notifications{
+	margin-left: 10px;
+}
+
+img.addButton{
+	width: 72px;
+/* 	bottom:0px; */
+	position: relative;
+	top: 5px;
+	left:38.5%;
+}
+
+

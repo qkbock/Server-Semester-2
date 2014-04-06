@@ -1,3 +1,11 @@
+@font-face {
+	font-family: 'Conv_houschka-alt-light';
+	src: url('fonts/houschka-alt-light.eot');
+	src: local('☺'), url('fonts/houschka-alt-light.woff') format('woff'), url('fonts/houschka-alt-light.ttf') format('truetype'), url('fonts/houschka-alt-light.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 html, body, div, span, p, a, del, em, img, ol, ul, li, fieldset, form, label {
   margin: 0;
   padding: 0;

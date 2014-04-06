@@ -8,7 +8,7 @@
 	$chore = $_POST['choreVal'];
 	$time = $_POST['timeVal'];
 	$duration = $_POST['durationVal'];
-	$date = date("n\-h\-y");
+	$date = date("n\-j\-y");
 	
  	$json = array("ID" => $choreID, "Username" => $userName, "Chore" => $chore, "Time" => $time, "Duration" => $duration, "Date" => $date);
  	$collection -> insert($json);
