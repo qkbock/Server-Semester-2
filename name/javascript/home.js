@@ -1,27 +1,110 @@
 $(document).ready(function() {
 	$(window).scrollTop(0);
-	$('section.menuItem').hide();
-	$('section#HOME').show();
-	drawCircle();
+	
+	var yourTotalToday;
+	var todayGoal;
+	
+/* 	$('section.menuItem').hide(); */
+	
+/*
+	$.ajax({
+			type: "POST",
+			url: "getTodayGoal.php",
+			data: { variable: "test"},
+			success: function(data) {
+				todayGoal = parseInt(data);
+				console.log("Today Goal:");
+				console.log(todayGoal);
+				console.log(typeof(todayGoal));
+			}
+	});
+	
+	$.ajax({
+			type: "POST",
+			url: "getYourTotalToday.php",
+			data: { variable: "test"},
+			success: function(data) {
+				yourTotalToday = parseInt(data);
+				console.log("Total Today:");
+				console.log(yourTotalToday);
+			}
+	});
+*/
+		/* 	$('section#HOME').show(); */
+
+
+
+
+	$.ajax({
+			type: "POST",
+			url: "home.php",
+			data: { variable: "test"},
+			success: function(data) {
+				document.getElementById("contentHolder").innerHTML = data;
+			}
+	});
+	
+	setTimeout(drawCircle, 200);
+	
+/*
+	$('section.iconHolder img').click(function(){
+		$('h1#pageName').text($(this).attr("name"));
+		$('section.menuItem').hide();
+		var thisSection = $(this).attr("name");
+		var showThisSection = "section#" + thisSection;
+		$(showThisSection).show();
+	});
+*/
 	
 	$('section.iconHolder img').click(function(){
 		$('h1#pageName').text($(this).attr("name"));
 		$('section.menuItem').hide();
 		var thisSection = $(this).attr("name");
 		var showThisSection = "section#" + thisSection;
-		console.log(showThisSection);
 		$(showThisSection).show();
-	});
+		var phpURL = $(this).attr("value") + ".php";
+		$.ajax({
+			type: "POST",
+			url: phpURL,
+			data: { variable: "test"},
+			success: function(data) {
+				document.getElementById("contentHolder").innerHTML = data;
+			}
+		});
+	});	
+	
 	
 	
 	$('section.iconHolder img#home').click(function(){
 		$("#progressCanvas svg").remove();
-		drawCircle();
+		setTimeout(drawCircle, 200);
 	});
 	
+	$('img#refreshButton').click(function(){
+		location.reload();
+	});
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	function drawCircle(){
-		var amount = 80;
-		var circleCenter = 125;
+	yourTotalToday = parseInt(document.getElementById("yourTotalTodaySpan").innerHTML);
+	todayGoal = parseInt(document.getElementById("todayGoalSpan").innerHTML);	
+		
+		var amount = (yourTotalToday/todayGoal)*100;
+				console.log("Amount:");
+				console.log(amount);
+
+		
+var circleCenter = 125;
 		var circleSize = 100;
 		
 		var archtype = Raphael("progressCanvas", 250, 250);
@@ -96,6 +179,15 @@ $(document).ready(function() {
 		my_arc.animate({
 		    arc: [circleCenter, circleCenter, amount, circleSize, circleSize]
 		}, 1500, "bounce");
+
 	}
+
+
+
+
+
+
+
+
 
 });

@@ -37,7 +37,7 @@ a:link {text-decoration:none;}
 a:visited {text-decoration:none;}
 a:hover {text-decoration:none;}
 a:active {text-decoration:none;
-	
+
 }
 
 input:focus{
@@ -56,6 +56,14 @@ nav.topNav{
 /* 	height:100px; */
 	position: absolute;
 	top:0px;
+}
+
+img#refreshButton{
+	width: 27px;
+	position: fixed;
+	top:10px;
+	right:10px;
+	float:right;	
 }
 
 nav.bottomNav{
@@ -133,9 +141,10 @@ section#HOME{
 }
 
 section#HOME article#progress h2#yourTotalToday{
-/* 	position: absolute; */
+/* 	position: fixed; */
 	margin-top: -145px;	
-/* 	text-align: center; */
+	text-align: center;
+/* 	top:100px; */
 }
 
 section#HOME article#notification{
@@ -182,4 +191,3 @@ section#NOTIFICATIONS article#notificationHolder article.coupon{
 section#NOTIFICATIONS article#notificationHolder article.notification p{
 	text-align:left;
 }
-
