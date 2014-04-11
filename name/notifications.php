@@ -24,7 +24,7 @@
 	$yourTotalToday = 14;
 	$todayGoal = 25;
   	
-	echo '<section class="menuItem" id="NOTIFICATIONS">
+	echo '
 		<article id="notificationHolder">
 			<article class="notification">
 				<h1 class="smaller">ASK GOOD QUESTIONS</h1>
@@ -58,7 +58,6 @@
 			</article>
 		
 		</article>
-	</section>
 
 		
 	';

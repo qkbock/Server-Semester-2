@@ -3,8 +3,7 @@ $(document).ready(function() {
 	
 	var yourTotalToday;
 	var todayGoal;
-	
-/* 	$('section.menuItem').hide(); */
+	var lastRefreshableClicked = "home";
 	
 /*
 	$.ajax({
@@ -30,7 +29,7 @@ $(document).ready(function() {
 			}
 	});
 */
-		/* 	$('section#HOME').show(); */
+
 
 
 
@@ -40,11 +39,41 @@ $(document).ready(function() {
 			url: "home.php",
 			data: { variable: "test"},
 			success: function(data) {
-				document.getElementById("contentHolder").innerHTML = data;
+				document.getElementById("HOME").innerHTML = data;
 			}
 	});
 	
-	setTimeout(drawCircle, 200);
+	$.ajax({
+			type: "POST",
+			url: "notifications.php",
+			data: { variable: "test"},
+			success: function(data) {
+				document.getElementById("NOTIFICATIONS").innerHTML = data;
+			}
+	});
+	
+	$.ajax({
+			type: "POST",
+			url: "stats.php",
+			data: { variable: "test"},
+			success: function(data) {
+				document.getElementById("STATS").innerHTML = data;
+			}
+	});
+	
+	$.ajax({
+			type: "POST",
+			url: "settings.php",
+			data: { variable: "test"},
+			success: function(data) {
+				document.getElementById("SETTINGS").innerHTML = data;
+			}
+	});
+	
+	$('section.menuItem').hide();
+	$('section#HOME').show();
+	
+	setTimeout(drawCircle, 100);
 	
 /*
 	$('section.iconHolder img').click(function(){
@@ -62,26 +91,45 @@ $(document).ready(function() {
 		var thisSection = $(this).attr("name");
 		var showThisSection = "section#" + thisSection;
 		$(showThisSection).show();
-		var phpURL = $(this).attr("value") + ".php";
-		$.ajax({
-			type: "POST",
-			url: phpURL,
-			data: { variable: "test"},
-			success: function(data) {
-				document.getElementById("contentHolder").innerHTML = data;
-			}
-		});
+/*
+
+*/
 	});	
 	
 	
 	
 	$('section.iconHolder img#home').click(function(){
 		$("#progressCanvas svg").remove();
-		setTimeout(drawCircle, 200);
+		drawCircle();
+/* 		setTimeout(drawCircle, 200); */
 	});
 	
+	$('.refreshable').click(function(){
+		lastRefreshableClicked = $(this).attr("value");
+	});
+	
+	
 	$('img#refreshButton').click(function(){
-		location.reload();
+		if(lastRefreshableClicked == "home"){
+			location.reload();
+		}
+		else if (lastRefreshableClicked == "stats"){
+			
+		}
+		else if (lastRefreshableClicked == "settings"){
+			
+		}
+		else if (lastRefreshableClicked == "notifications"){
+				$.ajax({
+					type: "POST",
+					url: "notifications.php",
+					data: { variable: "test"},
+					success: function(data) {
+						document.getElementById("NOTIFICATIONS").innerHTML = data;
+					}
+				});
+		}
+		
 	});
 
 	
@@ -97,11 +145,9 @@ $(document).ready(function() {
 	
 	function drawCircle(){
 	yourTotalToday = parseInt(document.getElementById("yourTotalTodaySpan").innerHTML);
-	todayGoal = parseInt(document.getElementById("todayGoalSpan").innerHTML);	
-		
+	todayGoal = parseInt(document.getElementById("todayGoalSpan").innerHTML);
+	
 		var amount = (yourTotalToday/todayGoal)*100;
-				console.log("Amount:");
-				console.log(amount);
 
 		
 var circleCenter = 125;

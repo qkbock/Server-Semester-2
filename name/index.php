@@ -16,13 +16,15 @@
 </head>
 <body>
 
+<!--
 <section id="contentHolder">
 </section>
-
-<!--
-	<section class="menuItem" id="HOME">
-	</section>	
 -->
+
+	<section class="menuItem" id="HOME"></section>	
+	<section class="menuItem" id="STATS"></section>
+	<section class="menuItem" id="SETTINGS"></section>
+	<section class="menuItem" id="NOTIFICATIONS"></section>
 	
 <!--
 	<section class="menuItem" id="STATS">
@@ -59,10 +61,10 @@
 	
 	<nav class="bottomNav">
 		<section class="iconHolder">
-			<img class="navIcons" id="home" name="HOME" value="home" src="images/homeIcon.png" />
-			<img class="navIcons" id="stats" name="STATS" value="stats" src="images/statsIcon.png" /></a>
-			<img class="navIcons" id="settings" name="SETTINGS" value="settings" src="images/settingsIcon.png" />
-			<img class="navIcons" id="notifications" name="NOTIFICATIONS" value="notifications" src="images/notificationsIcon.png" />
+			<img class="navIcons refreshable" id="home" name="HOME" value="home" src="images/homeIcon.png" />
+			<img class="navIcons refreshable" id="stats" name="STATS" value="stats" src="images/statsIcon.png" /></a>
+			<img class="navIcons refreshable" id="settings" name="SETTINGS" value="settings" src="images/settingsIcon.png" />
+			<img class="navIcons refreshable" id="notifications" name="NOTIFICATIONS" value="notifications" src="images/notificationsIcon.png" />
 		</section>	
 		<img class="addButton" src="images/addButton.png" />
 	</nav>
