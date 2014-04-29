@@ -33,7 +33,8 @@ $(document).ready(function() {
 
 
 
-
+	$("div.overlay").hide();
+	
 	$.ajax({
 			type: "POST",
 			url: "home.php",
@@ -91,9 +92,7 @@ $(document).ready(function() {
 		var thisSection = $(this).attr("name");
 		var showThisSection = "section#" + thisSection;
 		$(showThisSection).show();
-/*
-
-*/
+		$("td#badgesButton").css("background-color", "#25335A");
 	});	
 	
 	
@@ -138,8 +137,20 @@ $(document).ready(function() {
 		}
 		
 	});
-
 	
+	$(document).on('click', ".badgeImage" , function() {
+		$("div.overlay").show( "drop", { direction: "down" }, "fast" );
+	});
+	
+	
+	
+	
+	
+	
+	
+	$("img.XButton").click(function(){
+		$("div.overlay").hide( "drop", { direction: "down" }, "fast" );
+	});
 	
 	
 	

@@ -50,6 +50,19 @@ section{
 }
 */
 
+div.overlay{
+	width: 320px;
+	height: 600px;
+	background-color: rgba(19,29,47,0.98);
+	position:absolute;
+}
+
+img.XButton{
+	width: 50px;
+	position: fixed;
+	bottom: 10px;
+	left: 134px;
+}
 /* -----------------------------------TOP NAV----------------------------------------- */
 
 nav.topNav{
@@ -246,3 +259,6 @@ section#NOTIFICATIONS article#notificationHolder article.coupon{
 section#NOTIFICATIONS article#notificationHolder article.notification p{
 	text-align:left;
 }
+
+
+
