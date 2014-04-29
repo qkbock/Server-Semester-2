@@ -16,13 +16,21 @@
 </head>
 <body>
 
-<!--
-<section id="contentHolder">
-</section>
--->
-
 	<section class="menuItem" id="HOME"></section>	
-	<section class="menuItem" id="STATS"></section>
+	<section class="menuItem" id="STATS">
+		<article id="stats">
+		</article>
+		<div class="mask"></div>
+		<nav class="statsNav">
+			<table class="statsNavTable">
+				<tr>
+					<td>BADGES</td>
+					<td>POINTS</td>
+					<td>CALENDAR</td>
+				</tr>
+			</table>
+		</nav>
+	</section>
 	<section class="menuItem" id="SETTINGS"></section>
 	<section class="menuItem" id="NOTIFICATIONS"></section>
 	
@@ -47,10 +55,7 @@
 	
 	<section class="menuItem" id="SETTINGS">
 
-	</section>
-	
-	
-	
+	</section>	
 -->
 	
 	

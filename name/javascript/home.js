@@ -57,7 +57,7 @@ $(document).ready(function() {
 			url: "stats.php",
 			data: { variable: "test"},
 			success: function(data) {
-				document.getElementById("STATS").innerHTML = data;
+				document.getElementById("stats").innerHTML = data;
 			}
 	});
 	
@@ -114,7 +114,14 @@ $(document).ready(function() {
 			location.reload();
 		}
 		else if (lastRefreshableClicked == "stats"){
-			
+				$.ajax({
+					type: "POST",
+					url: "stats.php",
+					data: { variable: "test"},
+					success: function(data) {
+						document.getElementById("stats").innerHTML = data;
+					}
+				});
 		}
 		else if (lastRefreshableClicked == "settings"){
 			

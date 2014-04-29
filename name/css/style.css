@@ -50,11 +50,13 @@ section{
 }
 */
 
+/* -----------------------------------TOP NAV----------------------------------------- */
+
 nav.topNav{
 	width:100%;
 	background-color: #59BFC5;
 /* 	height:100px; */
-	position: absolute;
+	position: fixed;
 	top:0px;
 }
 
@@ -103,6 +105,8 @@ h1.smaller{
 	margin: 5px;
 }
 
+/* -----------------------------------BOTTOM NAV----------------------------------------- */
+
 img.navIcons{
 	width: 38px;
 	margin: 5px;
@@ -131,6 +135,7 @@ img.addButton{
 
 
 
+/* -----------------------------------HOME----------------------------------------- */
 
 
 section#HOME{
@@ -159,7 +164,57 @@ section#HOME article#notification{
 }
 
 
+/* -----------------------------------STATS----------------------------------------- */
+nav.statsNav{
+	position:fixed;
+	top:48px;
+	color: white;
+	font-size: 1.3em;
+	left:-2px;
+}
 
+nav.statsNav table td{
+/* 	width: 100%; */
+	background-color: #59BFC5;
+	text-align: center;
+	padding: 7px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+div.mask{
+	position:fixed;
+	width: 100%;
+	height: 90px;
+	background-color: white;
+}
+
+/* -----------------------------------BADGES----------------------------------------- */
+
+article.badges{
+	width:100%;
+	height: 452px;
+	position:absolute;
+	top:90px;
+	overflow-y: auto;
+	padding-top:3px;
+	padding-bottom:70px;
+}
+
+table.badgeTable{
+	width: 97%;
+	text-align:center;
+}
+
+table.badgeTable img{
+	width:92%;
+}
+
+table.badgeTable td{
+	padding-bottom: 5px;	
+}
+
+/* -----------------------------------NOTIFICATIONS----------------------------------------- */
 
 
 section#NOTIFICATIONS article#notificationHolder{
