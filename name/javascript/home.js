@@ -1,10 +1,16 @@
 $(document).ready(function() {
 	$(window).scrollTop(0);
 	
+	//set up some variables
 	var yourTotalToday;
 	var todayGoal;
 	var lastRefreshableClicked = "home";
 	
+	//load all the information for the badges into arrays
+	var badgeNames = ["THE NIGHT OWL", "50:50", "THE REPEATER"];
+	var badgePoints = ["100 points", "200 points", "300 points"];
+	var badgeDiscriptions = ["You logged a chore between 1 and 4 am", "You and John logged exactly the same amount of time today", "You logged 5+ chores in one day"];
+	var badgeImageNames = ["nightOwl.png","50.png", "repeater.png"];
 /*
 	$.ajax({
 			type: "POST",
@@ -32,9 +38,11 @@ $(document).ready(function() {
 
 
 
-
+	//hide the things that need to be hidden
 	$("div.overlay").hide();
+	$("div.badgeOverlay").hide();
 	
+	//load the information from various php file into the correct locations in the app
 	$.ajax({
 			type: "POST",
 			url: "home.php",
@@ -86,29 +94,36 @@ $(document).ready(function() {
 	});
 */
 	
+	//when you click on a menu item
 	$('section.iconHolder img').click(function(){
+		//change the top nav heading to match the name of the section
 		$('h1#pageName').text($(this).attr("name"));
+		//hide all the sections
 		$('section.menuItem').hide();
+		//reveal the section you clicked on
 		var thisSection = $(this).attr("name");
 		var showThisSection = "section#" + thisSection;
 		$(showThisSection).show();
+		//change the tab a color??
 		$("td#badgesButton").css("background-color", "#25335A");
 	});	
 	
 	
-	
+	//when you click on home remove and redraw the cirlce so it looks nice
 	$('section.iconHolder img#home').click(function(){
 		$("#progressCanvas svg").remove();
 		drawCircle();
 /* 		setTimeout(drawCircle, 200); */
 	});
 	
+	
 	$('.refreshable').click(function(){
 		lastRefreshableClicked = $(this).attr("value");
 	});
 	
-	
+	//when you click the refresh button
 	$('img#refreshButton').click(function(){
+		//determine what page you were on buy seeing what the last page you clicked on was and reload that php section
 		if(lastRefreshableClicked == "home"){
 			location.reload();
 		}
@@ -138,8 +153,16 @@ $(document).ready(function() {
 		
 	});
 	
+	//change the content of the badge discriptions and show the overlay
 	$(document).on('click', ".badgeImage" , function() {
 		$("div.overlay").show( "drop", { direction: "down" }, "fast" );
+		$("div.badgeOverlay").show( "drop", { direction: "down" }, "fast" );
+		var arrayLocation = $(this).attr("value");
+		$('h2.badgeNameOverlay').text(badgeNames[arrayLocation]);
+		$('p.badgePointsOverlay').text(badgePoints[arrayLocation]);
+		$('p.badgeDiscriptionOverlay').text(badgeDiscriptions[arrayLocation]);
+		$('img.badgeImageOverlay').attr("src", "images/badges/"+badgeImageNames[arrayLocation]);
+/* 		console.log(arrayLocation); */
 	});
 	
 	
@@ -147,9 +170,10 @@ $(document).ready(function() {
 	
 	
 	
-	
+	//hide the overlay and any potential things that could be open
 	$("img.XButton").click(function(){
 		$("div.overlay").hide( "drop", { direction: "down" }, "fast" );
+		$("div.badgeOverlay").hide( "drop", { direction: "down" }, "fast" );
 	});
 	
 	
@@ -161,14 +185,18 @@ $(document).ready(function() {
 	
 	
 	
+	
+	
+	
+	
+	//circle drawing
 	function drawCircle(){
 	yourTotalToday = parseInt(document.getElementById("yourTotalTodaySpan").innerHTML);
 	todayGoal = parseInt(document.getElementById("todayGoalSpan").innerHTML);
 	
 		var amount = (yourTotalToday/todayGoal)*100;
 
-		
-var circleCenter = 125;
+		var circleCenter = 125;
 		var circleSize = 100;
 		
 		var archtype = Raphael("progressCanvas", 250, 250);
@@ -245,13 +273,5 @@ var circleCenter = 125;
 		}, 1500, "bounce");
 
 	}
-
-
-
-
-
-
-
-
 
 });

@@ -26,9 +26,9 @@
 			<center>
 			<table class="badgeTable">
 				<tr>
-					<td><img class="badgeImage" src="images/badges/nightOwl.png" /></td>
-					<td><img class="badgeImage" src="images/badges/50.png" /></td>
-					<td><img class="badgeImage" src="images/badges/repeater.png" /></td>
+					<td><img value="0" class="badgeImage" src="images/badges/nightOwl.png" /></td>
+					<td><img value="1" class="badgeImage" src="images/badges/50.png" /></td>
+					<td><img value="2" class="badgeImage" src="images/badges/repeater.png" /></td>
 				</tr>
 				<tr>
 					<td><img class="badgeImage" src="images/badges/dynamicDuo.png" /></td>

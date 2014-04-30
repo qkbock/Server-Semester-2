@@ -65,6 +65,13 @@
 		<img class="XButton" src="images/XButton.png" />
 	</div>
 	
+	<div class="badgeOverlay">
+		<h2 class="badgeNameOverlay">THE NIGHT OWL</h2>
+		<img class="badgeImageOverlay" src="images/badges/nightOwl.png" />
+		<p class="badgePointsOverlay">100 points</p>
+		<p class="badgeDiscriptionOverlay">This is a badge</p>
+	</div>
+	
 <script>
 	<?php include("javascript/home.js"); ?>
 </script>

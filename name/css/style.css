@@ -50,11 +50,13 @@ section{
 }
 */
 
+/* -----------------------------------OVERLAYS----------------------------------------- */
+
 div.overlay{
 	width: 320px;
 	height: 600px;
 	background-color: rgba(19,29,47,0.98);
-	position:absolute;
+	position:fixed;
 }
 
 img.XButton{
@@ -63,6 +65,49 @@ img.XButton{
 	bottom: 10px;
 	left: 134px;
 }
+
+/* -----------------------------------Badge Overlays----------------------------------------- */
+
+div.badgeOverlay{
+	position: fixed;
+}
+
+h2.badgeNameOverlay{
+	position: fixed;
+	top: 80px;
+	width: 80%;
+	margin-left: 10%;
+	text-align: center;
+	color: white;
+	font-size: 1.6em;
+}
+
+img.badgeImageOverlay{
+	position: fixed;
+	left: 90px;
+	top: 130px;
+	width: 140px;
+}
+
+p.badgePointsOverlay{
+	position: fixed;
+	top: 275px;
+	width: 80%;
+	margin-left: 10%;
+	text-align: center;
+	font-family: light;
+	font-style: italic;
+}
+
+p.badgeDiscriptionOverlay{
+	position: fixed;
+	top: 325px;
+	width: 80%;
+	margin-left: 10%;
+	text-align: center;
+	font-size: 1.5em;
+}
+
 /* -----------------------------------TOP NAV----------------------------------------- */
 
 nav.topNav{
