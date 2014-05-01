@@ -21,10 +21,10 @@
 
   	$cursor = $pulseCollection -> find($findTimeUser1);
 */
-	$yourTotalToday = 14;
-	$todayGoal = 25;
-  	
 	echo '
+	
+		<img id="pointsFrame" src="images/points/pointsFrame.png" />			
+		<div id="pointsImageHolder"><img src="images/points/pointsImage.png" style="width:690px"/></div>
 
 	';
 

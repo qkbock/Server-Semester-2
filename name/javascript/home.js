@@ -7,10 +7,10 @@ $(document).ready(function() {
 	var lastRefreshableClicked = "home";
 	
 	//load all the information for the badges into arrays
-	var badgeNames = ["THE NIGHT OWL", "50:50", "THE REPEATER"];
-	var badgePoints = ["100 points", "200 points", "300 points"];
-	var badgeDiscriptions = ["You logged a chore between 1 and 4 am", "You and John logged exactly the same amount of time today", "You logged 5+ chores in one day"];
-	var badgeImageNames = ["nightOwl.png","50.png", "repeater.png"];
+	var badgeNames = ["THE NIGHT OWL", "50:50", "THE REPEATER", "THE DYNAMIC DUO", "CLOCKWORK", "THE REGULAR", "THE QUICKY", "THE COUCH POTATOES", "THE INVESTIGATOR", "HIGH NOON", "THE MOONLIGHTER", "THE CHOREAHOLIC", "LABOR OF LOVE", "FORGOT TO STOP", "THE VACATIONERS", "THE HABIT", "THE TEAM", "10 HOURS", "25 HOURS", "50 HOURS", "100 HOURS", "250 HOURS", "500 HOURS", "1000 HOURS"];
+	var badgePoints = ["75 points", "200 points", "75 points", "200 points", "100 points", "200 points", "10 points", "25 points", "200 points", "50 points", "50 points", "50 points", "75 points", "25 points", "25 points", "500 points", "100 points", "150 points", "200 points", "300 points", "400 points", "500 points", "1000 points", "1500 points"];
+	var badgeDiscriptions = ["You logged a chore between 1 am and 4 am", "You and John logged the same amount of time today", "You logged 5+ chores in one day", "You and John logged chores at the same time for the same duration", "You logged a chore at the same time 3 times this week", "You logged a chore every day for a week", "You logged a chore under 5 min", "Neither you or John logged any chores above 2 minutes today", "You looked at your stats 20 times", "You logged a chore between noon and 1 pm", "You did an extra hour of chores beyond your daily time goal", "You logged 2+ consecutive hours", "You logged a chore on Valentine's day", "You logged a chore 12+ hours long", "You and John haven't done more than an hour of chores for a week", "You reached your goal for 21 consecutive days", "You and John each reached your distribution goals", "Together you and John have logged 10 hours", "Together you and John have logged 25 hours", "Together you and John have logged 50 hours", "Together you and John have logged 100 hours", "Together you and John have logged 250 hours", "Together you and John have logged 500 hours", "Together you and John have logged 1000 hours"];
+	var badgeImageNames = ["nightOwl.png","50.png", "repeater.png", "dynamicDuo.png", "clockwork.png", "regular.png", "quicky.png", "couchPotatoe.png", "investigator.png", "highNoon.png", "moonlighter.png", "choreaholic.png", "laborOfLove.png", "forgotToStop.png", "vacationers.png", "habit.png", "team.png", "10hrs.png", "25hrs.png", "50hrs.png", "100hrs.png", "250hrs.png", "500hrs.png", "1000hrs.png",];
 /*
 	$.ajax({
 			type: "POST",
@@ -41,6 +41,7 @@ $(document).ready(function() {
 	//hide the things that need to be hidden
 	$("div.overlay").hide();
 	$("div.badgeOverlay").hide();
+	$("article.statsSection").hide();
 	
 	//load the information from various php file into the correct locations in the app
 	$.ajax({
@@ -104,8 +105,17 @@ $(document).ready(function() {
 		var thisSection = $(this).attr("name");
 		var showThisSection = "section#" + thisSection;
 		$(showThisSection).show();
-		//change the tab a color??
+		
+		//set up stats section to default
+		//hide all sections
+		$("article.statsSection").hide();
+		//show badges section
+		$("article#stats").show();
+		//make all tabs light blue
+		$("table.statsNavTable td").css("background-color", "#59BFC5");
+		//make badges tab dark blue
 		$("td#badgesButton").css("background-color", "#25335A");
+		lastRefreshableClicked = "Badges";
 	});	
 	
 	
@@ -117,8 +127,69 @@ $(document).ready(function() {
 	});
 	
 	
+	
+	//when you click on points load the points file into article#statsPoints and change that tab blue
+	$('td#pointsButton').click(function(){
+		$.ajax({
+				type: "POST",
+				url: "points.php",
+				data: { variable: "test"},
+				success: function(data) {
+					document.getElementById("statsPoints").innerHTML = data;
+				}
+		});
+		//make all tabs light blue
+		$("table.statsNavTable td").css("background-color", "#59BFC5");
+		$("td#pointsButton").css("background-color", "#25335A");
+		
+		if(lastRefreshableClicked == "stats" || lastRefreshableClicked == "badges"){
+			$("article.statsSection").hide( "drop", { direction: "left" }, "medium" );
+			$("article#statsPoints").show( "drop", { direction: "right" }, "medium" );
+		}
+		else if(lastRefreshableClicked == "calendar"){
+			$("article.statsSection").hide( "drop", { direction: "right" }, "medium" );
+			$("article#statsPoints").show( "drop", { direction: "left" }, "medium" );
+		}
+		else{}
+
+	});	
+	
+	//when you click on calendar load the points file into article#statsCalendar and change that tab blue
+	$('td#calendarButton').click(function(){
+		$.ajax({
+				type: "POST",
+				url: "calendar.php",
+				data: { variable: "test"},
+				success: function(data) {
+					document.getElementById("statsCalendar").innerHTML = data;
+				}
+		});
+		//make all tabs light blue
+		$("table.statsNavTable td").css("background-color", "#59BFC5");
+		$("td#calendarButton").css("background-color", "#25335A");
+		
+		$("article.statsSection").hide( "drop", { direction: "left" }, "medium" );
+		$("article#statsCalendar").show( "drop", { direction: "right" }, "medium" );
+
+	});	
+	
+	//when you click on badges load the points file into article#statsCalendar and change that tab blue
+	$('td#badgesButton').click(function(){
+		//make all tabs light blue
+		$("table.statsNavTable td").css("background-color", "#59BFC5");
+		$("td#badgesButton").css("background-color", "#25335A");
+		
+		$("article.statsSection").hide( "drop", { direction: "right" }, "medium" );
+		$("article#stats").show( "drop", { direction: "left" }, "medium" );
+
+	});	
+	
+	
+	
+	
 	$('.refreshable').click(function(){
 		lastRefreshableClicked = $(this).attr("value");
+		console.log(lastRefreshableClicked);
 	});
 	
 	//when you click the refresh button

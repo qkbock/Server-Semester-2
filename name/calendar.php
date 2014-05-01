@@ -21,11 +21,27 @@
 
   	$cursor = $pulseCollection -> find($findTimeUser1);
 */
-	$yourTotalToday = 14;
-	$todayGoal = 25;
-  	
 	echo '
-		
+		<article class="badges">
+			<center>
+			<h3>CALENDAR
+			CALENDAR
+			CALENDAR
+CALENDAR
+CALENDAR
+CALENDAR
+CALENDAR
+CALENDAR
+CALENDAR
+CALENDAR
+CALENDAR
+CALENDAR
+
+</h3>
+			</center>			
+		</article>
+
+
 	';
 
 

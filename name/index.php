@@ -22,15 +22,19 @@
 
 	<section class="menuItem" id="HOME"></section>	
 	<section class="menuItem" id="STATS">
-		<article id="stats">
+		<article class="statsSection" id="stats">
+		</article>
+		<article class="statsSection" id="statsPoints">
+		</article>
+		<article class="statsSection" id="statsCalendar">
 		</article>
 		<div class="mask"></div>
 		<nav class="statsNav">
 			<table class="statsNavTable">
 				<tr>
-					<td id="badgesButton">BADGES</td>
-					<td id="pointsButton">POINTS</td>
-					<td id="calendarButton">CALENDAR</td>
+					<td class="refreshable" id="badgesButton" value="badges">BADGES</td>
+					<td class="refreshable" id="pointsButton" value="points">POINTS</td>
+					<td class="refreshable" id="calendarButton" value="calendar">CALENDAR</td>
 				</tr>
 			</table>
 		</nav>
