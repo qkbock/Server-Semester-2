@@ -293,6 +293,50 @@ img#pointsFrame{
 	width: 310px;
 } 
 
+img#pointsImage{
+	width:690px; 
+}
+
+div.hotspot{
+	width:30px;
+	height: 30px;
+	position: absolute;
+/* 	background-color: rgba(255,0,0,0.56); */
+
+}
+
+div#hotspot1{
+	top:190px;
+	left:18px;
+}
+div#hotspot2{
+	top:173px;
+	left:95px;
+}
+div#hotspot3{
+	top:155px;
+	left:125px;
+}
+div#hotspot4{
+	top:117px;
+	left:263px;
+}
+div#hotspot5{
+	top:80px;
+	left:363px;
+}
+div#hotspot6{
+	top:65px;
+	left:497px;
+}
+div#hotspot7{
+	top:22px;
+	left:533px;
+}
+div#hotspot8{
+	top:-5px;
+	left:660px;
+}
 /* -----------------------------------NOTIFICATIONS----------------------------------------- */
 
 

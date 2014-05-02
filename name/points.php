@@ -24,7 +24,7 @@
 	echo '
 	
 		<img id="pointsFrame" src="images/points/pointsFrame.png" />			
-		<div id="pointsImageHolder"><img src="images/points/pointsImage.png" style="width:690px"/></div>
+		<div id="pointsImageHolder"><img id="pointsImage" src="images/points/pointsImage.png" /></div>
 
 	';
 

@@ -24,7 +24,20 @@
 	<section class="menuItem" id="STATS">
 		<article class="statsSection" id="stats">
 		</article>
-		<article class="statsSection" id="statsPoints">
+		<article class="statsSection" id="statsPoints">	
+			<img id="pointsFrame" src="images/points/pointsFrame.png" />			
+			<div id="pointsImageHolder">
+				<img id="pointsImage" src="images/points/pointsImage.png" />
+				<div id="hotspot1" class="hotspot" value="7"></div>
+				<div id="hotspot2" class="hotspot" value="16"></div>
+				<div id="hotspot3" class="hotspot" value="10"></div>
+				<div id="hotspot4" class="hotspot" value="3"></div>
+				<div id="hotspot5" class="hotspot" value="16"></div>
+				<div id="hotspot6" class="hotspot" value="4"></div>
+				<div id="hotspot7" class="hotspot" value="17"></div>
+				<div id="hotspot8" class="hotspot" value="16"></div>
+			</div>
+			
 		</article>
 		<article class="statsSection" id="statsCalendar">
 		</article>

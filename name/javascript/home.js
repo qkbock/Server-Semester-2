@@ -43,6 +43,9 @@ $(document).ready(function() {
 	$("div.badgeOverlay").hide();
 	$("article.statsSection").hide();
 	
+	
+	
+	
 	//load the information from various php file into the correct locations in the app
 	$.ajax({
 			type: "POST",
@@ -128,16 +131,9 @@ $(document).ready(function() {
 	
 	
 	
+	
 	//when you click on points load the points file into article#statsPoints and change that tab blue
 	$('td#pointsButton').click(function(){
-		$.ajax({
-				type: "POST",
-				url: "points.php",
-				data: { variable: "test"},
-				success: function(data) {
-					document.getElementById("statsPoints").innerHTML = data;
-				}
-		});
 		//make all tabs light blue
 		$("table.statsNavTable td").css("background-color", "#59BFC5");
 		$("td#pointsButton").css("background-color", "#25335A");
@@ -145,14 +141,43 @@ $(document).ready(function() {
 		if(lastRefreshableClicked == "stats" || lastRefreshableClicked == "badges"){
 			$("article.statsSection").hide( "drop", { direction: "left" }, "medium" );
 			$("article#statsPoints").show( "drop", { direction: "right" }, "medium" );
+			
 		}
 		else if(lastRefreshableClicked == "calendar"){
 			$("article.statsSection").hide( "drop", { direction: "right" }, "medium" );
 			$("article#statsPoints").show( "drop", { direction: "left" }, "medium" );
 		}
 		else{}
+/* 		$("div#pointsImageHolder img").css("border", "solid"); */
+		$("div#pointsImageHolder").animate({ scrollLeft:600 }, 1500);
 
 	});	
+	
+	$("div.hotspot").click(function(){
+		$("div.overlay").show( "drop", { direction: "down" }, "fast" );
+		$("div.badgeOverlay").show( "drop", { direction: "down" }, "fast" );
+		var arrayLocation = $(this).attr("value");
+		$('h2.badgeNameOverlay').text(badgeNames[arrayLocation]);
+		$('p.badgePointsOverlay').text(badgePoints[arrayLocation]);
+		$('p.badgeDiscriptionOverlay').text(badgeDiscriptions[arrayLocation]);
+		$('img.badgeImageOverlay').attr("src", "images/badges/"+badgeImageNames[arrayLocation]);
+	});
+	
+	
+		/*
+$("div.overlay").show( "drop", { direction: "down" }, "fast" );
+		$("div.badgeOverlay").show( "drop", { direction: "down" }, "fast" );
+		var arrayLocation = $(this).attr("value");
+		$('h2.badgeNameOverlay').text(badgeNames[arrayLocation]);
+		$('p.badgePointsOverlay').text(badgePoints[arrayLocation]);
+		$('p.badgeDiscriptionOverlay').text(badgeDiscriptions[arrayLocation]);
+		$('img.badgeImageOverlay').attr("src", "images/badges/"+badgeImageNames[arrayLocation]);
+*/
+/* 		console.log(arrayLocation); */
+/* 	}); */
+	
+	
+	
 	
 	//when you click on calendar load the points file into article#statsCalendar and change that tab blue
 	$('td#calendarButton').click(function(){
