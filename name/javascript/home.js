@@ -149,7 +149,7 @@ $(document).ready(function() {
 		}
 		else{}
 /* 		$("div#pointsImageHolder img").css("border", "solid"); */
-		$("div#pointsImageHolder").animate({ scrollLeft:600 }, 1500);
+		$("div#pointsImageHolder").animate({ scrollLeft:600 }, 1200);
 
 	});	
 	
@@ -181,22 +181,44 @@ $("div.overlay").show( "drop", { direction: "down" }, "fast" );
 	
 	//when you click on calendar load the points file into article#statsCalendar and change that tab blue
 	$('td#calendarButton').click(function(){
-		$.ajax({
-				type: "POST",
-				url: "calendar.php",
-				data: { variable: "test"},
-				success: function(data) {
-					document.getElementById("statsCalendar").innerHTML = data;
-				}
-		});
 		//make all tabs light blue
 		$("table.statsNavTable td").css("background-color", "#59BFC5");
 		$("td#calendarButton").css("background-color", "#25335A");
 		
 		$("article.statsSection").hide( "drop", { direction: "left" }, "medium" );
 		$("article#statsCalendar").show( "drop", { direction: "right" }, "medium" );
+		
+		$("div.datesHolder").animate({ scrollTop:800 }, 1500);
 
 	});	
+	
+	$("div.datesHolder").scroll(function(){
+		var scrollHeight = $("div.datesHolder").scrollTop();
+		if(scrollHeight < 120){
+			$("h2.calendarMonth").text("March, 2014");
+		}
+		if(scrollHeight < 285 && scrollHeight > 120){
+			$("h2.calendarMonth").text("April, 2014");
+		}
+		else if(scrollHeight > 285){
+			$("h2.calendarMonth").text("May, 2014");
+		}
+/* 		alert(scrollHeight); */
+	});
+	
+	$('div.datesHolder td').click(function(){
+		var date = $(this).attr("value");
+		$.ajax({
+				type: "POST",
+				url: "calendar.php",
+				data: { date: date},
+				success: function(data) {
+					document.getElementById("calendarDayHolder").innerHTML = data;
+				}
+		});
+	});
+	
+	
 	
 	//when you click on badges load the points file into article#statsCalendar and change that tab blue
 	$('td#badgesButton').click(function(){

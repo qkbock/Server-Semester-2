@@ -31,6 +31,7 @@ p{
 	color:white;
 	font-size: 1.4em;
 	margin: 7px;
+	
 }
 
 a:link {text-decoration:none;}
@@ -279,7 +280,7 @@ table.badgeTable td{
 div#pointsImageHolder{
 	position: absolute;
 	top:145px;
-	left:61px;
+	left:60px;
 	width: 236px;
 	height: 375px;
 /* 	background-color: rgba(208,0,255,0.34); */
@@ -337,6 +338,85 @@ div#hotspot8{
 	top:-5px;
 	left:660px;
 }
+
+
+/* -----------------------------------CALENDAR----------------------------------------- */
+
+
+h2.calendarMonth{
+	width:100%;
+	padding:5px;
+	background-color: #131D2E;
+	position: fixed;
+	top: 84px;
+	text-align: center;
+	color: white;
+	font-size: 1.4em;
+}
+
+table.daysOfWeek{
+	position: fixed;
+	background-color: #F82641;
+	top: 123px;
+	color: white;
+	padding: 4px;
+	font-size: 1.3em;
+	width: 100%;
+	padding-top:6px;
+	padding-bottom:6px;
+}
+
+table.daysOfWeek td{
+	text-align:center;
+	width:20px;
+}
+
+div.datesHolder{
+	position: fixed;
+	top: 167px;
+	width: 100%;
+	height: 225px;
+	overflow-y: scroll;
+}
+
+table.dates{
+	background-color: #F82641;
+	color: white;
+	padding: 4px;
+	font-size: 1.3em;
+	width: 100%;
+	padding-bottom: 4px;
+}
+
+
+table.dates td{
+	padding-top:8px;
+	padding-bottom:8px;
+	text-align:center;
+	width:20px;
+}
+
+div#calendarDayHolder{
+	position: fixed;
+	top:388px;
+	width: 100%;
+	height: 115px;
+	overflow: hidden;
+}
+		
+
+h2#timelineDay{
+	text-align: center;	
+	font-size: 1.2em;
+}
+
+img#timeline{
+	width: 98%;
+	position: absolute;
+	top: 27px;
+	margin: 1%;
+}	
+			
 /* -----------------------------------NOTIFICATIONS----------------------------------------- */
 
 
