@@ -109,6 +109,85 @@ p.badgeDiscriptionOverlay{
 	font-size: 1.5em;
 }
 
+/* -----------------------------------ADD OVERLAY----------------------------------------- */
+
+div.addChoreOverlay{
+	width: 320px;
+	height: 600px;
+	background-color: rgba(19,29,47,0.98);
+	position:fixed;
+}
+
+h2.addChoreOverlay{
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+img.startTimer{
+	width:40%;
+	margin-left: 30%;
+	margin-bottom: 30px;
+}
+img.orImage{
+	width: 100%;
+}
+p.addChoreInput{
+	text-align: right;
+	font-family:'medium',Sans-Serif;
+	padding-right: 5px; 
+/* 	font-size: 1.7em; */
+}
+span.choreOverlayLabel{
+	font-size: 1.2em;	
+}
+
+p#date{}
+p#startTime{}
+p#endTime{}
+
+input.choreInput {
+	-webkit-appearance: none;
+	background-color: #59BFC5 /* #9DC52C */;
+	border-radius: 0px;
+	border: 0px;
+	height: 25px;
+	width: 125px;
+	vertical-align:text-bottom;
+	font-family:'medium',Sans-Serif;
+	text-align: center;
+	font-size: 1em;
+	color: white;
+}
+
+input#date{}
+input#startTime{}
+input#endTime{}
+
+p#cancelButton{
+	font-family:'medium',Sans-Serif;
+	font-size: 1.5em;
+	background-color: #F82641;
+	padding: 5px;
+	width: 100px;
+	text-align: center;
+	display: inline-block;
+	position: absolute;
+	bottom: 40px;
+	left: 45px;
+}
+p#saveButton{
+	font-family:'medium',Sans-Serif;
+	font-size: 1.5em;
+	background-color: #F82641;
+	padding: 5px;
+	width: 80px;
+	text-align: center;
+	display: inline-block;
+	position: absolute;
+	bottom: 40px;
+	right: 45px;
+}
+
 
 /* -----------------------------------TOP NAV----------------------------------------- */
 

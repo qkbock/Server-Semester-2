@@ -60,47 +60,47 @@
 						<td value="Feb 26, 2014">26</td>
 						<td value="Feb 27, 2014">27</td>
 						<td value="Feb 28, 2014">28</td>
-						<td value="March 1, 2014">1</td>
-						<td value="March 2, 2014">2</td>
+						<td value="Mar 1, 2014">1</td>
+						<td value="Mar 2, 2014">2</td>
 					</tr>
 					<tr>
-						<td value="March 3, 2014">3</td>
-						<td value="March 4, 2014">4</td>
-						<td value="March 5, 2014">5</td>
-						<td value="March 6, 2014">6</td>
-						<td value="March 7, 2014">7</td>
-						<td value="March 8, 2014">8</td>
-						<td value="March 9, 2014">9</td>
+						<td value="Mar 3, 2014">3</td>
+						<td value="Mar 4, 2014">4</td>
+						<td value="Mar 5, 2014">5</td>
+						<td value="Mar 6, 2014">6</td>
+						<td value="Mar 7, 2014">7</td>
+						<td value="Mar 8, 2014">8</td>
+						<td value="Mar 9, 2014">9</td>
 					</tr>
 					<tr>
-						<td value="March 10, 2014">10</td>
-						<td value="March 11, 2014">11</td>
-						<td value="March 12, 2014">12</td>
-						<td value="March 13, 2014">13</td>
-						<td value="March 14, 2014">14</td>
-						<td value="March 15, 2014">15</td>
-						<td value="March 16, 2014">16</td>
+						<td value="Mar 10, 2014">10</td>
+						<td value="Mar 11, 2014">11</td>
+						<td value="Mar 12, 2014">12</td>
+						<td value="Mar 13, 2014">13</td>
+						<td value="Mar 14, 2014">14</td>
+						<td value="Mar 15, 2014">15</td>
+						<td value="Mar 16, 2014">16</td>
 					</tr>
 					<tr>
-						<td value="March 17, 2014">17</td>
-						<td value="March 18, 2014">18</td>
-						<td value="March 19, 2014">19</td>
-						<td value="March 20, 2014">20</td>
-						<td value="March 21, 2014">21</td>
-						<td value="March 22, 2014">22</td>
-						<td value="March 23, 2014">23</td>
+						<td value="Mar 17, 2014">17</td>
+						<td value="Mar 18, 2014">18</td>
+						<td value="Mar 19, 2014">19</td>
+						<td value="Mar 20, 2014">20</td>
+						<td value="Mar 21, 2014">21</td>
+						<td value="Mar 22, 2014">22</td>
+						<td value="Mar 23, 2014">23</td>
 					</tr>
 					<tr>
-						<td value="March 24, 2014">24</td>
-						<td value="March 25, 2014">25</td>
-						<td value="March 26, 2014">26</td>
-						<td value="March 27, 2014">27</td>
-						<td value="March 28, 2014">28</td>
-						<td value="March 29, 2014">29</td>
-						<td value="March 30, 2014">30</td>
+						<td value="Mar 24, 2014">24</td>
+						<td value="Mar 25, 2014">25</td>
+						<td value="Mar 26, 2014">26</td>
+						<td value="Mar 27, 2014">27</td>
+						<td value="Mar 28, 2014">28</td>
+						<td value="Mar 29, 2014">29</td>
+						<td value="Mar 30, 2014">30</td>
 					</tr>
 					<tr>
-						<td value="March 31, 2014">31</td>
+						<td value="Mar 31, 2014">31</td>
 						<td value="April 1, 2014">1</td>
 						<td value="April 2, 2014">2</td>
 						<td value="April 3, 2014">3</td>
@@ -231,6 +231,18 @@
 		<img class="badgeImageOverlay" src="images/badges/nightOwl.png" />
 		<p class="badgePointsOverlay">100 points</p>
 		<p class="badgeDiscriptionOverlay">This is a badge</p>
+	</div>
+	
+	<div class="addChoreOverlay">
+		<h2 class="addChoreOverlay">Begin a chore now:</h2>
+		<img class="startTimer" src="images/startTimerButton.png" />
+		<img class="orImage" src="images/orImage.png" />
+		<h2 class="addChoreOverlay">Log a previous chore:</h2>
+		<p class="addChoreInput" id="date"><span class="choreOverlayLabel">DATE: </span><input class="choreInput" id="date" type="date" /></p>
+		<p class="addChoreInput" id="startTime"><span class="choreOverlayLabel">START TIME: </span><input class="choreInput" id="startTime" type="time" /></p>
+		<p class="addChoreInput" id="endTime"><span class="choreOverlayLabel">END TIME: </span><input class="choreInput" id="endTime" type="time" /></p>
+		<p id="cancelButton">CANCEL</p>
+		<p id="saveButton">SAVE</p>
 	</div>
 	
 <script>

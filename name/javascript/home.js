@@ -41,6 +41,7 @@ $(document).ready(function() {
 	//hide the things that need to be hidden
 	$("div.overlay").hide();
 	$("div.badgeOverlay").hide();
+	$("div.addChoreOverlay").hide();
 	$("article.statsSection").hide();
 	
 	
@@ -130,7 +131,13 @@ $(document).ready(function() {
 	});
 	
 	
+	$('img.addButton').click(function(){
+		$("div.addChoreOverlay").show( "drop", { direction: "down" }, "fast" );
+	});
 	
+	$('p#cancelButton').click(function(){
+		$("div.addChoreOverlay").hide( "drop", { direction: "down" }, "fast" );
+	});
 	
 	//when you click on points load the points file into article#statsPoints and change that tab blue
 	$('td#pointsButton').click(function(){
