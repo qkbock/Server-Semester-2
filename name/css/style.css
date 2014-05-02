@@ -123,7 +123,7 @@ h2.addChoreOverlay{
 	margin-bottom: 20px;
 	margin-top: 20px;
 }
-img.startTimer{
+img.timerButton{
 	width:40%;
 	margin-left: 30%;
 	margin-bottom: 30px;
@@ -163,28 +163,24 @@ input#date{}
 input#startTime{}
 input#endTime{}
 
-p#cancelButton{
+p.cancelSaveButtons{
 	font-family:'medium',Sans-Serif;
 	font-size: 1.5em;
 	background-color: #F82641;
 	padding: 5px;
-	width: 100px;
 	text-align: center;
 	display: inline-block;
 	position: absolute;
 	bottom: 40px;
+
+}
+
+p#cancelButton{
+	width: 100px;
 	left: 45px;
 }
 p#saveButton{
-	font-family:'medium',Sans-Serif;
-	font-size: 1.5em;
-	background-color: #F82641;
-	padding: 5px;
 	width: 80px;
-	text-align: center;
-	display: inline-block;
-	position: absolute;
-	bottom: 40px;
 	right: 45px;
 }
 

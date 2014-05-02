@@ -235,14 +235,14 @@
 	
 	<div class="addChoreOverlay">
 		<h2 class="addChoreOverlay">Begin a chore now:</h2>
-		<img class="startTimer" src="images/startTimerButton.png" />
+		<img class="timerButton" value="startTimer" src="images/startTimerButton.png" />
 		<img class="orImage" src="images/orImage.png" />
 		<h2 class="addChoreOverlay">Log a previous chore:</h2>
 		<p class="addChoreInput" id="date"><span class="choreOverlayLabel">DATE: </span><input class="choreInput" id="date" type="date" /></p>
 		<p class="addChoreInput" id="startTime"><span class="choreOverlayLabel">START TIME: </span><input class="choreInput" id="startTime" type="time" /></p>
 		<p class="addChoreInput" id="endTime"><span class="choreOverlayLabel">END TIME: </span><input class="choreInput" id="endTime" type="time" /></p>
-		<p id="cancelButton">CANCEL</p>
-		<p id="saveButton">SAVE</p>
+		<p class="cancelSaveButtons" id="cancelButton">CANCEL</p>
+		<p class="cancelSaveButtons" id="saveButton">SAVE</p>
 	</div>
 	
 <script>

@@ -130,14 +130,124 @@ $(document).ready(function() {
 /* 		setTimeout(drawCircle, 200); */
 	});
 	
-	
+	//click on the add button to bring up the add chore overlay
 	$('img.addButton').click(function(){
+		$('input.choreInput').val('');		
+		$('img.timerButton').css("opacity", "1");
 		$("div.addChoreOverlay").show( "drop", { direction: "down" }, "fast" );
 	});
 	
+	
+	//when you click on the cancel button
 	$('p#cancelButton').click(function(){
+		//hide the overlay
 		$("div.addChoreOverlay").hide( "drop", { direction: "down" }, "fast" );
+		//set the timer button back to default
+		$('img.timerButton').attr("value", "startTimer");
+		$('img.timerButton').attr("src","images/startTimerButton.png");
 	});
+	
+	$('p#saveButton').click(function(){
+		if($('input#date').val() == ''){
+			alert("Please input a date");
+		}
+		else if($('input#startTime').val() == ''){
+			alert("Please input a start time");
+		}
+		else{
+			//hide the overlay
+			$("div.addChoreOverlay").hide( "drop", { direction: "down" }, "fast" );
+			//set the timer button back to default
+			$('img.timerButton').attr("value", "startTimer");
+			$('img.timerButton').attr("src","images/startTimerButton.png");
+			
+			if($('input#endTime').val() == ''){
+				//get the time right now
+				var timeNow = new Date().toJSON();
+				//take just the hours digits
+				var timeNowHour = timeNow.slice(11,13);
+				//adjust them to this timezone
+				timeNowHour = timeNowHour - 4;
+				//if the number doesnt have a 0 in front add it
+				if(timeNowHour < 10){
+					timeNowHour = "0"+timeNowHour;
+				}
+				//take just the min digits and :
+				var timeNowMin = timeNow.slice(13, 16);
+				//set the start time input value to the hour digits plus the min digits
+				$('input#endTime').val(timeNowHour+timeNowMin);
+			}
+			//send the data to the server
+			$.ajax({
+				type: "POST",
+				url: "logAChore.php",
+				data: { person: "Quincy",
+						date: $('input#date').val(),
+						startTime: $('input#startTime').val(),
+						endTime: $('input#endTime').val()
+				},
+				success: function(data) {
+					alert(data);
+				}
+			});
+		}
+	});
+	
+	//when you click on the timer button
+	$('img.timerButton').click(function(){
+		//find out if it is yet to be clicked or already clicked
+		var startOrEnd = $(this).attr("value");
+		//if it hasnt been clicked
+		if(startOrEnd == "startTimer"){
+			//find today's date
+			var dateNow = new Date().toJSON().slice(0,10);
+			//set the date input value to today
+			$('input#date').val(dateNow);
+			//get the time right now
+			var timeNow = new Date().toJSON();
+			//take just the hours digits
+			var timeNowHour = timeNow.slice(11,13);
+			//adjust them to this timezone
+			timeNowHour = timeNowHour - 4;
+			//if the number doesnt have a 0 in front add it
+			if(timeNowHour < 10){
+				timeNowHour = "0"+timeNowHour;
+			}
+			//take just the min digits and :
+			var timeNowMin = timeNow.slice(13, 16);
+			//set the start time input value to the hour digits plus the min digits
+			$('input#startTime').val(timeNowHour+timeNowMin);
+			//change the value to 'had been clicked'
+			$(this).attr("value", "endTimer");
+			//and change the image
+			$(this).attr("src","images/endTimerButton.png");
+			$('input#endTime').val('');
+		}
+		//if it has been clicked
+		else if(startOrEnd == "endTimer"){
+			//get the time right now
+			var timeNow = new Date().toJSON();
+			//take just the hours digits
+			var timeNowHour = timeNow.slice(11,13);
+			//adjust them to this timezone
+			timeNowHour = timeNowHour - 4;
+			//if the number doesnt have a 0 in front add it
+			if(timeNowHour < 10){
+				timeNowHour = "0"+timeNowHour;
+			}
+			//take just the min digits and :
+			var timeNowMin = timeNow.slice(13, 16);
+			//set the start time input value to the hour digits plus the min digits
+			$('input#endTime').val(timeNowHour+timeNowMin);
+			//change the value back to default
+			$(this).attr("value", "startTimer");
+			//change the image to match
+			$(this).attr("src","images/startTimerButton.png");
+			//hide the button
+			$(this).css("opacity", "0");	
+		}
+	});
+	
 	
 	//when you click on points load the points file into article#statsPoints and change that tab blue
 	$('td#pointsButton').click(function(){
