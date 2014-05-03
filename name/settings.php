@@ -21,10 +21,12 @@
 
   	$cursor = $pulseCollection -> find($findTimeUser1);
 */
-	$yourTotalToday = 14;
-	$todayGoal = 25;
-  	
 	echo '
+		<div class="slider"></div>
+		<h2 class="goalHeadings" id="current">Current Goal</h2>
+		<div class="slider"></div>
+		<h2 class="goalHeadings" id="ideal">Ideal Distribution</h2>
+		<p class="cancelSaveButtons" id="saveButtonCenter">SAVE</p>
 
 	';
 

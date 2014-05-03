@@ -11,6 +11,8 @@ $(document).ready(function() {
 	var badgePoints = ["75 points", "200 points", "75 points", "200 points", "100 points", "200 points", "10 points", "25 points", "200 points", "50 points", "50 points", "50 points", "75 points", "25 points", "25 points", "500 points", "100 points", "150 points", "200 points", "300 points", "400 points", "500 points", "1000 points", "1500 points"];
 	var badgeDiscriptions = ["You logged a chore between 1 am and 4 am", "You and John logged the same amount of time today", "You logged 5+ chores in one day", "You and John logged chores at the same time for the same duration", "You logged a chore at the same time 3 times this week", "You logged a chore every day for a week", "You logged a chore under 5 min", "Neither you or John logged any chores above 2 minutes today", "You looked at your stats 20 times", "You logged a chore between noon and 1 pm", "You did an extra hour of chores beyond your daily time goal", "You logged 2+ consecutive hours", "You logged a chore on Valentine's day", "You logged a chore 12+ hours long", "You and John haven't done more than an hour of chores for a week", "You reached your goal for 21 consecutive days", "You and John each reached your distribution goals", "Together you and John have logged 10 hours", "Together you and John have logged 25 hours", "Together you and John have logged 50 hours", "Together you and John have logged 100 hours", "Together you and John have logged 250 hours", "Together you and John have logged 500 hours", "Together you and John have logged 1000 hours"];
 	var badgeImageNames = ["nightOwl.png","50.png", "repeater.png", "dynamicDuo.png", "clockwork.png", "regular.png", "quicky.png", "couchPotatoe.png", "investigator.png", "highNoon.png", "moonlighter.png", "choreaholic.png", "laborOfLove.png", "forgotToStop.png", "vacationers.png", "habit.png", "team.png", "10hrs.png", "25hrs.png", "50hrs.png", "100hrs.png", "250hrs.png", "500hrs.png", "1000hrs.png",];
+	var rewardImageNames = ["African", "Dahl", "Darwin", "Ford", "Green", "Jordan", "Proust"];
+
 /*
 	$.ajax({
 			type: "POST",
@@ -43,7 +45,7 @@ $(document).ready(function() {
 	$("div.badgeOverlay").hide();
 	$("div.addChoreOverlay").hide();
 	$("article.statsSection").hide();
-	
+	$("img.reward").hide();
 	
 	
 	
@@ -75,14 +77,16 @@ $(document).ready(function() {
 			}
 	});
 	
+/*
 	$.ajax({
 			type: "POST",
 			url: "settings.php",
 			data: { variable: "test"},
 			success: function(data) {
-				document.getElementById("SETTINGS").innerHTML = data;
+				document.getElementById("settings").innerHTML = data;
 			}
 	});
+*/
 	
 	$('section.menuItem').hide();
 	$('section#HOME').show();
@@ -110,16 +114,32 @@ $(document).ready(function() {
 		var showThisSection = "section#" + thisSection;
 		$(showThisSection).show();
 		
-		//set up stats section to default
-		//hide all sections
-		$("article.statsSection").hide();
-		//show badges section
-		$("article#stats").show();
-		//make all tabs light blue
-		$("table.statsNavTable td").css("background-color", "#59BFC5");
-		//make badges tab dark blue
-		$("td#badgesButton").css("background-color", "#25335A");
-		lastRefreshableClicked = "Badges";
+		if($(this).attr("name") == "STATS"){
+			//set up stats section to default
+			//hide all sections
+			$("article.statsSection").hide();
+			//show badges section
+			$("article#stats").show();
+			//make all tabs light blue
+			$("table.statsNavTable td").css("background-color", "#59BFC5");
+			//make badges tab dark blue
+			$("td#badgesButton").css("background-color", "#25335A");
+			lastRefreshableClicked = "Badges";
+		}
+		else if($(this).attr("name") == "SETTINGS"){
+			//set up stats section to default
+			//hide all sections
+			$("article.settingsSection").hide();
+			//show badges section
+			$("article#settings").show();
+			//make all tabs light blue
+			$("table.settingsNavTable td").css("background-color", "#59BFC5");
+			//make badges tab dark blue
+			$("td#goalButton").css("background-color", "#25335A");
+			lastRefreshableClicked = "Goal";
+		}
+		
+		$('img.reward').hide();
 	});	
 	
 	
@@ -135,6 +155,9 @@ $(document).ready(function() {
 		$('input.choreInput').val('');		
 		$('img.timerButton').css("opacity", "1");
 		$("div.addChoreOverlay").show( "drop", { direction: "down" }, "fast" );
+		var randomNumber = Math.floor((Math.random() * rewardImageNames.length));
+		console.log(randomNumber);
+		$('img.reward').attr("src","images/rewards/"+rewardImageNames[randomNumber]+".png");
 	});
 	
 	
@@ -187,9 +210,12 @@ $(document).ready(function() {
 						endTime: $('input#endTime').val()
 				},
 				success: function(data) {
-					alert(data);
+					console.log(data);
 				}
 			});
+			
+			$('img.reward').show( "scale",  800);
+			$('img.reward').hide( "fade", { easing: 'easeInExpo'} , 11000);
 		}
 	});
 	
@@ -201,20 +227,27 @@ $(document).ready(function() {
 		if(startOrEnd == "startTimer"){
 			//find today's date
 			var dateNow = new Date().toJSON().slice(0,10);
-			//set the date input value to today
-			$('input#date').val(dateNow);
 			//get the time right now
 			var timeNow = new Date().toJSON();
 			//take just the hours digits
 			var timeNowHour = timeNow.slice(11,13);
 			//adjust them to this timezone
 			timeNowHour = timeNowHour - 4;
+			if(timeNowHour < 1){
+				var dateNowBeginning = dateNow.slice(0, 9);
+				var dateNowEnd = dateNow.slice(9, 10);
+				dateNowEnd = dateNowEnd - 1;
+				dateNow = dateNowBeginning + dateNowEnd;
+				timeNowHour = timeNowHour + 24;
+			}
 			//if the number doesnt have a 0 in front add it
 			if(timeNowHour < 10){
 				timeNowHour = "0"+timeNowHour;
 			}
 			//take just the min digits and :
 			var timeNowMin = timeNow.slice(13, 16);
+			//set the date input value to today
+			$('input#date').val(dateNow);
 			//set the start time input value to the hour digits plus the min digits
 			$('input#startTime').val(timeNowHour+timeNowMin);
 			//change the value to 'had been clicked'
@@ -231,6 +264,9 @@ $(document).ready(function() {
 			var timeNowHour = timeNow.slice(11,13);
 			//adjust them to this timezone
 			timeNowHour = timeNowHour - 4;
+			if(timeNowHour < 1){
+				timeNowHour = timeNowHour + 24;
+			}
 			//if the number doesnt have a 0 in front add it
 			if(timeNowHour < 10){
 				timeNowHour = "0"+timeNowHour;
@@ -416,11 +452,38 @@ $("div.overlay").show( "drop", { direction: "down" }, "fast" );
 	
 	
 	
+	$('#currentSlider').noUiSlider({
+		start: 30,
+		range: {
+			'min': 0,
+			'max': 100
+		}
+	});
+
+	$('#idealSlider').noUiSlider({
+		start: 50,
+		range: {
+			'min': 0,
+			'max': 100
+		}
+	});
 	
 	
+	$('#currentSlider').on({
+		slide: function(){
+			var sliderValue = parseInt($('#currentSlider').val());
+			var sliderValueLeftOver = 100 - sliderValue;
+			$('h2#currentNumbers').text(sliderValue + ":" + sliderValueLeftOver);		
+		}
+	});
 	
-	
-	
+	$('#idealSlider').on({
+		slide: function(){
+			var sliderValue = parseInt($('#idealSlider').val());
+			var sliderValueLeftOver = 100 - sliderValue;
+			$('h2#idealNumbers').text(sliderValue + ":" + sliderValueLeftOver);		
+		}
+	});
 	
 	
 	
@@ -496,8 +559,15 @@ $("div.overlay").show( "drop", { direction: "down" }, "fast" );
 		
 		//make an arc at 50,50 with a radius of 30 that grows from 0 to 40 of 100 with a bounce
 		//red
+		var strokeColor = "#F82641";
+		if(yourTotalToday >= todayGoal){
+			strokeColor = "#25335A";
+		}
+		else{
+			strokeColor = "#F82641";
+		}
 		var my_arc = archtype.path().attr({
-		    "stroke": "#F82641",
+		    "stroke": strokeColor,
 		    "stroke-width": 10,
 		    "stroke-linecap":"round",
 		    arc: [circleCenter, circleCenter, 0, circleSize, circleSize]

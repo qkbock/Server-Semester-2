@@ -10,17 +10,22 @@
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <script src="javascript/raphael-min.js"></script>
-    <script src="http://malsup.github.io/jquery.corner.js"></script>
+    <script src="javascript/jquery.nouislider.min.js"></script>
+<!--     <script src="http://malsup.github.io/jquery.corner.js"></script> -->
    	<link type="stylesheet" rel="stylesheet" href="css/style.css" />
    	<link type="stylesheet" rel="stylesheet" href="css/fonts.css" />
+   	<link href="css/jquery.nouislider.css" rel="stylesheet">
    	
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui, maximum-scale=1.0">
 </head>
 <body>
 
+<!-- 	......................................HOME...................................... -->
 
+	<section class="menuItem" id="HOME"></section>
 
-	<section class="menuItem" id="HOME"></section>	
+<!-- 	......................................STATS...................................... -->
+		
 	<section class="menuItem" id="STATS">
 		<article class="statsSection" id="stats">
 		</article>
@@ -196,17 +201,68 @@
 			</table>
 		</nav>
 	</section>
-	<section class="menuItem" id="SETTINGS"></section>
+	
+<!-- 	......................................SETTINGS...................................... -->
+	<section class="menuItem" id="SETTINGS">
+		
+		<article class="settingsSection" id="settings">
+			<h2 class="goalNumbers" id="currentNumbers">30:70</h2>
+			<div class="sliderHolder" id="currentSliderHolder">
+				<div id="currentSlider"></div>
+			</div>
+			<h2 class="goalHeadings" id="current">Current Goal</h2>
+			
+			<h2 class="goalNumbers" id="idealNumbers">50:50</h2>			
+			<div class="sliderHolder" id="idealSliderHolder">
+				<div class="slider" id="idealSlider"></div>
+			</div>
+			<h2 class="goalHeadings" id="ideal">Ideal Distribution</h2>
+			<p class="names" id="you1">You</p>
+			<p class="names" id="you2">You</p>
+			<p class="names" id="john1">John</p>
+			<p class="names" id="john2">John</p>
+			<p class="cancelSaveButtons" id="saveButtonCenter">SAVE</p>
+			<img class="locked" id="bottomOfPage" src="images/lock.png" />
+		</article>
+		
+		<article class="settingsSection" id="settingsModule">	
+			<p class="cancelSaveButtons" id="saveButtonCenter">SAVE</p>
+			<img class="locked" id="bottomOfPage" src="images/lock.png" />
+
+		</article>
+		
+		<article class="settingsSection" id="settingsChores">
+			<p class="cancelSaveButtons" id="saveButtonCenter">SAVE</p>
+			<img class="locked" id="bottomOfPage" src="images/lock.png" />
+		</article>
+		
+<!-- 		<div class="mask"></div> -->
+		<nav class="settingsNav">
+			<table class="settingsNavTable">
+				<tr>
+					<td class="refreshable" id="goalButton" value="goal">GOAL</td>
+					<td class="refreshable" id="moduleButton" value="module">MODULE</td>
+					<td class="refreshable" id="choresButton" value="chores">CHORES</td>
+				</tr>
+			</table>
+		</nav>
+	</section>
+		
+<!-- 	......................................NOTIFICATIONS...................................... -->
+	
 	<section class="menuItem" id="NOTIFICATIONS"></section>
 	
 	
-	
+<!-- 	......................................TOP NAV...................................... -->
+
 	
 	<nav class="topNav">
 		<h1 id="pageName">HOME</h1>
 		<img id="refreshButton" src="images/refresh.png" />
 	</nav>
-	
+
+<!-- 	......................................BOTTOM NAV...................................... -->
+
 	<nav class="bottomNav">
 		<section class="iconHolder">
 			<img class="navIcons refreshable" id="home" name="HOME" value="home" src="images/homeIcon.png" />
@@ -219,8 +275,9 @@
 
 
 
+<!-- 	......................................OVERLAYS...................................... -->
 
-
+	<img class="reward"  />
 
 	<div class="overlay">
 		<img class="XButton" src="images/XButton.png" />
@@ -244,7 +301,10 @@
 		<p class="cancelSaveButtons" id="cancelButton">CANCEL</p>
 		<p class="cancelSaveButtons" id="saveButton">SAVE</p>
 	</div>
-	
+
+
+<!-- 	......................................END...................................... -->
+
 <script>
 	<?php include("javascript/home.js"); ?>
 </script>

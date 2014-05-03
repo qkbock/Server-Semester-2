@@ -183,6 +183,20 @@ p#saveButton{
 	width: 80px;
 	right: 45px;
 }
+p#saveButtonCenter{
+	width: 80px;
+	left: 105px;
+	bottom: 75px;
+}
+
+/* -----------------------------------REWARD----------------------------------------- */
+
+img.reward{
+	width: 180px;
+	position: fixed;
+	top:156px;
+	left:70px;
+}
 
 
 /* -----------------------------------TOP NAV----------------------------------------- */
@@ -491,7 +505,112 @@ img#timeline{
 	top: 27px;
 	margin: 1%;
 }	
-			
+	
+	
+/* -----------------------------------SETTINGS----------------------------------------- */
+	
+nav.settingsNav{
+	position:fixed;
+	top:48px;
+	color: white;
+	font-size: 1.3em;
+	left:-2px;
+}
+
+nav.settingsNav table td{
+/* 	width: 100%; */
+	background-color: #59BFC5;
+	text-align: center;
+	padding: 7px;
+	padding-left: 17px;
+	padding-right: 17px;
+}
+
+h2.goalHeadings, h2.goalNumbers{
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
+
+h2.goalHeadings{
+	font-size: 1.7em;
+}
+
+input.goal{
+	position: absolute;
+	width: 80%;
+	margin-left: 10%;
+	-webkit-appearance: none;
+	height: 40px;
+	background-color: #9DC52C;
+}
+
+
+
+
+div.sliderHolder{
+	margin: 40px;
+	margin-top: 100px;
+}
+
+
+h2#currentNumbers{
+	top:115px;
+}
+div#currentSliderHolder{
+	margin-top: 165px;
+}
+h2#current{
+	top:200px;
+}
+
+
+h2#idealNumbers{
+	top:270px;
+}
+div#idealSliderHolder{
+	margin-top: 125px;
+
+}
+h2#ideal{
+	top:360px;
+}
+
+p.names{
+	position: absolute;
+}
+
+p#you1{
+	top: 160px;
+	left: 37px;
+}
+
+p#you2{
+	top: 315px;
+	left: 37px;
+}
+
+p#john1{
+	top: 160px;
+	right: 37px;
+}
+
+p#john2{
+	top: 315px;
+	right: 37px;
+}
+
+img.locked{
+	opacity: .7;
+	width: 33px;
+	position: absolute;
+	z-index: 2;
+}
+
+img#bottomOfPage{
+	bottom: 78px;
+	left: 141px;
+}			
 /* -----------------------------------NOTIFICATIONS----------------------------------------- */
 
 
@@ -524,6 +643,7 @@ section#NOTIFICATIONS article#notificationHolder article.coupon{
 section#NOTIFICATIONS article#notificationHolder article.notification p{
 	text-align:left;
 }
+
 
 
 

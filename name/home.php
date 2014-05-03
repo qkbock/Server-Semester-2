@@ -21,7 +21,7 @@
 
   	$cursor = $pulseCollection -> find($findTimeUser1);
 */
-	$yourTotalToday = 14;
+	$yourTotalToday = 25;
 	$todayGoal = 25;
   	
 	echo '
