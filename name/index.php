@@ -11,7 +11,8 @@
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <script src="javascript/raphael-min.js"></script>
     <script src="javascript/jquery.nouislider.min.js"></script>
-<!--     <script src="http://malsup.github.io/jquery.corner.js"></script> -->
+    <script src="javascript/jscolor.js"></script>
+
    	<link type="stylesheet" rel="stylesheet" href="css/style.css" />
    	<link type="stylesheet" rel="stylesheet" href="css/fonts.css" />
    	<link href="css/jquery.nouislider.css" rel="stylesheet">
@@ -226,12 +227,14 @@
 		</article>
 		
 		<article class="settingsSection" id="settingsModule">	
+			<img class ="moduleImage" src ="images/module.png" />
+			<input class="color" id="youColor" value="">
 			<p class="cancelSaveButtons" id="saveButtonCenter">SAVE</p>
 			<img class="locked" id="bottomOfPage" src="images/lock.png" />
-
 		</article>
 		
 		<article class="settingsSection" id="settingsChores">
+			<p>MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE </p>
 			<p class="cancelSaveButtons" id="saveButtonCenter">SAVE</p>
 			<img class="locked" id="bottomOfPage" src="images/lock.png" />
 		</article>

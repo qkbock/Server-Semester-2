@@ -187,6 +187,7 @@ p#saveButtonCenter{
 	width: 80px;
 	left: 105px;
 	bottom: 75px;
+	position: fixed;
 }
 
 /* -----------------------------------REWARD----------------------------------------- */
@@ -603,14 +604,40 @@ p#john2{
 img.locked{
 	opacity: .7;
 	width: 33px;
-	position: absolute;
+	position: fixed;
 	z-index: 2;
 }
 
 img#bottomOfPage{
 	bottom: 78px;
 	left: 141px;
-}			
+}
+
+img.moduleImage{
+	position: absolute;
+	top: 200px;
+	width: 70%;
+	margin-left: 10%;
+}	
+
+input.color{
+	position: absolute;
+	top: 221px;
+	left: 90px;
+	width: 57px;
+	height: 57px;
+	-webkit-appearance: none;
+	border-radius: 50px;
+	font-size: 0em;
+}
+
+input#youColor{
+
+}
+
+
+
+
 /* -----------------------------------NOTIFICATIONS----------------------------------------- */
 
 

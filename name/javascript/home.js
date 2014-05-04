@@ -4,8 +4,35 @@ $(document).ready(function() {
 	//set up some variables
 	var yourTotalToday;
 	var todayGoal;
+	var buttonColor = "#9DC52C";
 	var lastRefreshableClicked = "home";
+	$('input.color').val(buttonColor);
 	
+	$('input.color').change(function(){
+		var buttonColor2 = $('input.color').val();
+		var r = buttonColor2.slice(0,2);
+	    var g = buttonColor2.slice(2,4);
+	    var b = buttonColor2.slice(4,6);
+	    
+	    r = parseInt(r, 16);
+	    g = parseInt(g, 16);
+	    b = parseInt(b, 16);
+	    
+	    console.log(buttonColor2);	
+		console.log(r);	
+		console.log(g);	
+		console.log(b);	    
+	});
+/*
+	hexToRGB = function(hex){
+	    var r = hex >> 16;
+	    var g = hex >> 8 & 0xFF;
+	    var b = hex & 0xFF;
+		console.log(r);	    
+/* 	    return [r,g,b]; */
+/* 	} */
+	
+
 	//load all the information for the badges into arrays
 	var badgeNames = ["THE NIGHT OWL", "50:50", "THE REPEATER", "THE DYNAMIC DUO", "CLOCKWORK", "THE REGULAR", "THE QUICKY", "THE COUCH POTATOES", "THE INVESTIGATOR", "HIGH NOON", "THE MOONLIGHTER", "THE CHOREAHOLIC", "LABOR OF LOVE", "FORGOT TO STOP", "THE VACATIONERS", "THE HABIT", "THE TEAM", "10 HOURS", "25 HOURS", "50 HOURS", "100 HOURS", "250 HOURS", "500 HOURS", "1000 HOURS"];
 	var badgePoints = ["75 points", "200 points", "75 points", "200 points", "100 points", "200 points", "10 points", "25 points", "200 points", "50 points", "50 points", "50 points", "75 points", "25 points", "25 points", "500 points", "100 points", "150 points", "200 points", "300 points", "400 points", "500 points", "1000 points", "1500 points"];
@@ -152,6 +179,10 @@ $(document).ready(function() {
 	
 	//click on the add button to bring up the add chore overlay
 	$('img.addButton').click(function(){
+		//navigate back to the home screen
+		$('section.menuItem').hide();
+		$('section#HOME').show();
+		//set the stuff to default?
 		$('input.choreInput').val('');		
 		$('img.timerButton').css("opacity", "1");
 		$("div.addChoreOverlay").show( "drop", { direction: "down" }, "fast" );
@@ -386,10 +417,49 @@ $("div.overlay").show( "drop", { direction: "down" }, "fast" );
 	
 	
 	
+	$('td#goalButton').click(function(){
+		//make all tabs light blue
+		$("table.settingsNavTable td").css("background-color", "#59BFC5");
+		$("td#goalButton").css("background-color", "#25335A");	
+		
+		$("article.settingsSection").hide( "drop", { direction: "right" }, "medium" );
+		$("article#settings").show( "drop", { direction: "left" }, "medium" );
+
+	});	
+	
+	$('td#moduleButton').click(function(){
+		//make all tabs light blue
+		$("table.settingsNavTable td").css("background-color", "#59BFC5");
+		$("td#moduleButton").css("background-color", "#25335A");
+		
+		if(lastRefreshableClicked == "settings" || lastRefreshableClicked == "goal"){
+			$("article.settingsSection").hide( "drop", { direction: "left" }, "medium" );
+			$("article#settingsModule").show( "drop", { direction: "right" }, "medium" );
+			
+		}
+		else if(lastRefreshableClicked == "chores"){
+			$("article.settingsSection").hide( "drop", { direction: "right" }, "medium" );
+			$("article#settingsModule").show( "drop", { direction: "left" }, "medium" );
+		}
+	});	
+	
+	$('td#choresButton').click(function(){
+		//make all tabs light blue
+		$("table.settingsNavTable td").css("background-color", "#59BFC5");
+		$("td#choresButton").css("background-color", "#25335A");
+		
+		$("article.settingsSection").hide( "drop", { direction: "left" }, "medium" );
+		$("article#settingsChores").show( "drop", { direction: "right" }, "medium" );
+	});
+	
 	
 	$('.refreshable').click(function(){
 		lastRefreshableClicked = $(this).attr("value");
 		console.log(lastRefreshableClicked);
+		$('#currentSlider').val("30");
+		$('#idealSlider').val("50");
+		$('h2#currentNumbers').text("30:70");		
+		$('h2#idealNumbers').text("50:50");	
 	});
 	
 	//when you click the refresh button
@@ -485,6 +555,10 @@ $("div.overlay").show( "drop", { direction: "down" }, "fast" );
 		}
 	});
 	
+	
+$('input.color').click(function(){
+
+});
 	
 	
 	//circle drawing
