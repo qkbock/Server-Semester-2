@@ -1,27 +1,20 @@
 <?php
-/*
-	$m = new MongoClient();
-	$db = $m -> qandm;
-	$pulseCollection = $db -> pulseData;
-	$movieCollection = $db -> movieData;
-*/
+	$connection = new MongoClient();
+	$db = $connection -> thesis;
+	$collection = $db -> exhibitionData;
 
-/* 	$person1 = $_POST['userNameVal'];	 */
+	$yourTotalToday;
+	date_default_timezone_set('America/New_York');
+	$onThisDay = date("o")."-".date("m")."-".date("d");
 	
-/*
-	$findMovieUser = array("Username"=> $person1, "Movie" => $movie);
+	$findToday = array("Date"=> $onThisDay);
 
-	$cursor = $movieCollection -> find($findMovieUser);
+	$cursor = $collection -> find($findToday);
+	
 	foreach($cursor as $doc) {
-	 	$start1 = intval($doc["startTime"]);
-	 	$end1 = intval($doc["endTime"]); 
-	 }
-
-   	$findTimeUser1 = array("Username"=> $person1, "Time"=> array('$gt' => $start1, '$lte' => $end1) );  	
-
-  	$cursor = $pulseCollection -> find($findTimeUser1);
-*/
-	$yourTotalToday = 25;
+		$yourTotalToday = $yourTotalToday + $doc["duration"];
+	}
+	
 	$todayGoal = 25;
   	
 	echo '

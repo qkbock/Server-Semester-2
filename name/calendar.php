@@ -1,30 +1,19 @@
 <?php
-/*
-	$m = new MongoClient();
-	$db = $m -> qandm;
-	$pulseCollection = $db -> pulseData;
-	$movieCollection = $db -> movieData;
-*/
+	$connection = new MongoClient();
+	$db = $connection -> thesis;
+	$collection = $db -> exhibitionData;
 
 	$date = $_POST['date'];	
+	
+	
 	$startPoint = rand(11, 300);
 	$length = rand(1, 10);
 	$numberOfChores = rand(1, 6);
 	$colorSelector = rand(1, 2);
 	$color = "#9DC52C";
-/*
-	$findMovieUser = array("Username"=> $person1, "Movie" => $movie);
 
-	$cursor = $movieCollection -> find($findMovieUser);
-	foreach($cursor as $doc) {
-	 	$start1 = intval($doc["startTime"]);
-	 	$end1 = intval($doc["endTime"]); 
-	 }
-
-   	$findTimeUser1 = array("Username"=> $person1, "Time"=> array('$gt' => $start1, '$lte' => $end1) );  	
-
-  	$cursor = $pulseCollection -> find($findTimeUser1);
-*/
+	$findToday = array("Date"=> $onThisDay);
+	$cursor = $collection -> find($findToday);
 	echo '
 	<h2 id="timelineDay"> 
 		<span style="margin-right:5px; padding-left:15px; background-color:#59BFC5; border-radius:5px;"></span> You<span style="padding-left:25px;"></span>
@@ -39,6 +28,14 @@
 	echo '
 	<svg height="58%" width="100%">
 	  ';
+
+	
+/*
+		foreach($cursor as $doc) {
+			$totalToday_a = $totalToday_a + $doc["duration"];
+		}
+*/
+	  	
 	  	for ($i = 1; $i <= $numberOfChores; $i++) {
 	  		if($colorSelector < 1.5){
 		  		$color = "#9DC52C";

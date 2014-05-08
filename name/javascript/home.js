@@ -8,21 +8,13 @@ $(document).ready(function() {
 	var lastRefreshableClicked = "home";
 	$('input.color').val(buttonColor);
 	
+/*
 	$('input.color').change(function(){
-		var buttonColor2 = $('input.color').val();
-		var r = buttonColor2.slice(0,2);
-	    var g = buttonColor2.slice(2,4);
-	    var b = buttonColor2.slice(4,6);
-	    
-	    r = parseInt(r, 16);
-	    g = parseInt(g, 16);
-	    b = parseInt(b, 16);
-	    
-	    console.log(buttonColor2);	
-		console.log(r);	
-		console.log(g);	
-		console.log(b);	    
+			    
 	});
+*/
+	
+
 /*
 	hexToRGB = function(hex){
 	    var r = hex >> 16;
@@ -40,30 +32,21 @@ $(document).ready(function() {
 	var badgeImageNames = ["nightOwl.png","50.png", "repeater.png", "dynamicDuo.png", "clockwork.png", "regular.png", "quicky.png", "couchPotatoe.png", "investigator.png", "highNoon.png", "moonlighter.png", "choreaholic.png", "laborOfLove.png", "forgotToStop.png", "vacationers.png", "habit.png", "team.png", "10hrs.png", "25hrs.png", "50hrs.png", "100hrs.png", "250hrs.png", "500hrs.png", "1000hrs.png",];
 	var rewardImageNames = ["African", "Dahl", "Darwin", "Ford", "Green", "Jordan", "Proust"];
 
+
 /*
 	$.ajax({
 			type: "POST",
-			url: "getTodayGoal.php",
+			url: "userData.php",
 			data: { variable: "test"},
 			success: function(data) {
-				todayGoal = parseInt(data);
-				console.log("Today Goal:");
-				console.log(todayGoal);
-				console.log(typeof(todayGoal));
-			}
-	});
-	
-	$.ajax({
-			type: "POST",
-			url: "getYourTotalToday.php",
-			data: { variable: "test"},
-			success: function(data) {
-				yourTotalToday = parseInt(data);
-				console.log("Total Today:");
-				console.log(yourTotalToday);
-			}
-	});
-*/
+				console.log(data);
+				yourTotalToday = 99;
+				todayGoal = 999;
+/* 				$("#yourTotalTodaySpan").text("yourTotalToday"); */
+/* 				$("$todayGoalSpan").text("todayGoal"); */
+/* 				drawCircle(); */
+/* 			} */
+/* 	}); */
 
 
 
@@ -73,7 +56,7 @@ $(document).ready(function() {
 	$("div.addChoreOverlay").hide();
 	$("article.statsSection").hide();
 	$("img.reward").hide();
-	
+	$("img.buttonInChoreList").hide();
 	
 	
 	//load the information from various php file into the correct locations in the app
@@ -101,6 +84,15 @@ $(document).ready(function() {
 			data: { variable: "test"},
 			success: function(data) {
 				document.getElementById("stats").innerHTML = data;
+			}
+	});
+	
+	$.ajax({
+			type: "POST",
+			url: "getButtonColor.php",
+			data: { variable: "test"},
+			success: function(data) {
+				$('input.color').val(data);
 			}
 	});
 	
@@ -247,6 +239,16 @@ $(document).ready(function() {
 			
 			$('img.reward').show( "scale",  800);
 			$('img.reward').hide( "fade", { easing: 'easeInExpo'} , 11000);
+			
+			$.ajax({
+				type: "POST",
+				url: "home.php",
+				data: { variable: "test"},
+				success: function(data) {
+					document.getElementById("HOME").innerHTML = data;
+				}
+			});
+			setTimeout(drawCircle, 100);
 		}
 	});
 	
@@ -555,10 +557,48 @@ $("div.overlay").show( "drop", { direction: "down" }, "fast" );
 		}
 	});
 	
+	$('div.choreHolder ul li').click(function(){
+		$(this).children("img").slideToggle(250);
+	});
 	
-$('input.color').click(function(){
+	$("img.buttonInChoreList").click(function(){
+		if($(this).parent().hasClass('green')){
+			$(this).parent().switchClass( "green", "gray", 500, "easeInOutQuad" ); 
+			$(this).attr("src", "images/check.png");
+		}
+		if($(this).parent().hasClass('gray')){
+			$(this).parent().switchClass( "gray", "green", 500, "easeInOutQuad" ); 
+			$(this).attr("src", "images/XButton.png");
+		}
+	});
+	
+	$('p.buttonColorSave').click(function(){
+		//figure out the color in the input
+		var buttonColor2 = $('input.color').val();
+		var r = buttonColor2.slice(0,2);
+	    var g = buttonColor2.slice(2,4);
+	    var b = buttonColor2.slice(4,6);
+	    
+	    r = parseInt(r, 16);
+	    g = parseInt(g, 16);
+	    b = parseInt(b, 16);
+		//send the data to the server
+		$.ajax({
+			type: "POST",
+			url: "saveColor.php",
+			data: { buttonR: r,
+					buttonG: g,
+					buttonB: b,
+					hex: buttonColor2
+			},
+			success: function(data) {
+				console.log(data);
+			}
+		});
+		alert('saved');
+	});
 
-});
+/* 	.switchClass( "big", "blue", 1000, "easeInOutQuad" ); */
 	
 	
 	//circle drawing

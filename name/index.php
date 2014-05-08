@@ -145,7 +145,7 @@
 						<td value="April 28, 2014">28</td>
 						<td value="April 29, 2014">29</td>
 						<td value="April 30, 2014">30</td>
-						<td style="background-color:#25335A;" value="May 1, 2014">1</td>
+						<td value="May 1, 2014">1</td>
 						<td value="May 2, 2014">2</td>
 						<td value="May 3, 2014">3</td>
 						<td value="May 4, 2014">4</td>
@@ -153,7 +153,7 @@
 					<tr>
 						<td value="May 5, 2014">5</td>
 						<td value="May 6, 2014">6</td>
-						<td value="May 7, 2014">7</td>
+						<td style="background-color:#25335A;" value="May 7, 2014">7</td>
 						<td value="May 8, 2014">8</td>
 						<td value="May 9, 2014">9</td>
 						<td value="May 10, 2014">10</td>
@@ -228,15 +228,36 @@
 		
 		<article class="settingsSection" id="settingsModule">	
 			<img class ="moduleImage" src ="images/module.png" />
+			<h2 class="module">Change the color of your button on the module:</h2>
 			<input class="color" id="youColor" value="">
-			<p class="cancelSaveButtons" id="saveButtonCenter">SAVE</p>
-			<img class="locked" id="bottomOfPage" src="images/lock.png" />
+			<p class="cancelSaveButtons buttonColorSave" id="saveButtonCenter">SAVE</p>
+<!-- 			<img class="locked" id="bottomOfPage" src="images/lock.png" /> -->
 		</article>
 		
 		<article class="settingsSection" id="settingsChores">
-			<p>MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE MODULE </p>
+			<h2 class="settingsChores">Select chores to focus on: </h2>
+			<div class="choreHolder">
+				<ul>
+					<li class="green">Dusting 
+						<img class="buttonInChoreList" src="images/XButton.png" /></li>
+					<li class="green">Doing the Dishes 
+						<img class="buttonInChoreList" src="images/XButton.png" /></li>
+					<li class="green">Sweeping 
+						<img class="buttonInChoreList" src="images/XButton.png" /></li>
+					<li class="gray">Mopping
+						<img class="buttonInChoreList" src="images/check.png" /></li>
+					<li class="gray">Vacuuming
+						<img class="buttonInChoreList" src="images/check.png" /></li>
+					<li class="gray">Chore
+						<img class="buttonInChoreList" src="images/check.png" /></li>
+					<li class="gray">Chore 2
+						<img class="buttonInChoreList" src="images/check.png" /></li>
+				</ul>
+			</div>
+<!--
 			<p class="cancelSaveButtons" id="saveButtonCenter">SAVE</p>
 			<img class="locked" id="bottomOfPage" src="images/lock.png" />
+-->
 		</article>
 		
 <!-- 		<div class="mask"></div> -->

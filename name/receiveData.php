@@ -5,19 +5,16 @@
 	$connection = new MongoClient();
 	$db = $connection -> thesis;
 	$collection = $db -> exhibitionData;
-	
-	$choreID = strtotime("now");	
- 	$userName = $_GET['userName'];  
+		
+	$choreID = strtotime("now");						
+	$userName = $_GET['person'];  
+	$date = $_GET['date'];
 	$startTime = $_GET['startTime'];
  	$endTime = $_GET['endTime'];
-	$duration = $_GET['duration'];
-	$date = date("n\-j\-y");
-
-			
- 	$json = array("ID" => $choreID, "Username" => $userName, "Start" => $startTime, "End" => $endTime, "Duration" => $duration, "Date" => $date);
+ 	$duration = 25;
+ 	
+ 	$json = array("ID" => $choreID, "Username" => $userName, "Date" => $date, "startTime" => $startTime, "endTime" => $endTime, "duration" => $duration);
  	$collection -> insert($json);
  	
-/*  	$cursorAll = $collection->find(); */
-
-	echo "received";
-?>
+ 	echo "uploaded chore to server";
+?>  

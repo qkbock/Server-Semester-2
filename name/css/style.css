@@ -425,8 +425,10 @@ div#hotspot7{
 	left:533px;
 }
 div#hotspot8{
-	top:-5px;
-	left:660px;
+	top: -12px;
+	left: 662px;
+	width: 40px;
+	height: 40px;
 }
 
 
@@ -613,16 +615,23 @@ img#bottomOfPage{
 	left: 141px;
 }
 
+h2.module{
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	top:95px;	
+}
+
 img.moduleImage{
 	position: absolute;
-	top: 200px;
+	top: 220px;
 	width: 70%;
 	margin-left: 10%;
 }	
 
 input.color{
 	position: absolute;
-	top: 221px;
+	top: 241px;
 	left: 90px;
 	width: 57px;
 	height: 57px;
@@ -635,9 +644,51 @@ input#youColor{
 
 }
 
+h2.settingsChores{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 95px;
+}
 
+div.choreHolder{
+	position: absolute;
+	width: 100%;
+	top: 135px;
+	height: 380px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
 
+ul{
+	margin: 0px;
+	padding: 0px;	
+}
 
+ul li{
+	list-style-type: none;
+	font-family:'light',Sans-Serif;
+	font-size: 2em;
+	color: white;
+	background-color: #9DC52C;
+	padding: 10px;
+	margin-bottom: 15px;
+}
+
+ul li.green{
+	background-color: #9DC52C;
+}
+
+ul li.gray{
+	background-color: #b9b9b9;
+}
+
+img.buttonInChoreList{
+	float: right;
+	margin: -15px;
+	margin-top: -11px;
+	height: 59px;
+}
 /* -----------------------------------NOTIFICATIONS----------------------------------------- */
 
 
